@@ -1,6 +1,7 @@
 ---
 title: "Kinesiophobia_MA"
 author: "IM Lahart"
+contributor: "MP Boisgontier"
 date: "2023-07-05"
 output: html_document
 ---
@@ -27,16 +28,16 @@ glimpse(Kinphob_r)
 
 ## Meta-analysis method
 
-In our meta-analysis, we pooled Pearson product-moment correlations from eligible studies to examine the relationship between kinesiophobia and levels of physical activity. Correlations were pooled using the generic inverse pooling method via the 'metacor' function in the RStudio 'meta' package. This function automatically performs a neccessary Fisher's z-transformation on the original, untransformed correlations prior to pooling. The 'metacor' function also reconverts the pooled assocation back to its original form for ease of interpretation. 
+In our meta-analysis, we pooled Pearson product-moment correlations from eligible studies to examine the relationship between kinesiophobia and physical activity. Correlations were pooled using the generic inverse pooling method via the ‘metacor’ function in the R ‘meta’ package (Schwarzer, 2023). This function automatically performs a necessary Fisher’s z-transformation on the original, untransformed correlations prior to pooling. The ‘metacor’ function also reconverts the pooled association back to its original form for ease of interpretation.
 
-We anticipated considerable between-study heterogeneity, so we therefore, used a random-effects model to pool correlations. The restricted maximum likelihood (RML) estimator (Viechtbauer, 2005) was used to calculate the heterogeneity variance Tau squared. In addition to Tau squared, to quantify between-study heterogeneity we also reported the I^2 statistic, which provides the percentage of variability in the correlations that is not caused by sampling error (Higgins and Thompson, 2002). The I^2 statistic was interpreted as follows: 0-40%, might not be important; 30-60%, may represent moderate heterogeneity; 50-90%, may represent substantial heterogeneity; and 75-100%, considerable heterogeneity. To reduce the risk of false positives, we used a Knapp-Hartung adjustment (Knapp & Hartung, 2003) to calculate the confidence interval around the pooled association. We also report a the prediction interval which provides us with a range into which we can expect the associations of future studies to fall based on the current evidence. The pooled correlation were interpreted using Cohen’s (1988) conventions: r ≈ -0.10, small negative correlation; r ≈ -0.30, moderate negative correlation; r ≈ -0.50, large negative correlation.
+We anticipated considerable between-study heterogeneity, and therefore used a random-effects model to pool correlations. The restricted maximum likelihood (RML) estimator (Viechtbauer, 2005) was used to calculate the heterogeneity variance Tau2. In addition to Tau2, to quantify between-study heterogeneity, we also reported the I2 statistic, which provides the percentage of variability in the correlations that is not caused by sampling error (Higgins & Thompson, 2002). The I2 statistic was interpreted as follows: 0-40%, may not be important; 30-60%, may represent moderate heterogeneity; 50-90%, may represent substantial heterogeneity; and 75-100%, may represent considerable heterogeneity. To reduce the risk of false positives, we used a Knapp-Hartung adjustment (Knapp & Hartung, 2003) to calculate the confidence interval around the pooled association. We also report the prediction interval, which provides a range within which we can expect the associations of future studies to fall based on the current evidence. The pooled correlation was interpreted using Cohen’s (1988) conventions: r ≈ -0.10, small negative correlation; r ≈ -0.30, moderate negative correlation; r ≈ -0.50, large negative correlation.
 
 
-We conducted subgroup analyses to investigate the correlation differences between studies using different kinesiophobia measures, We used meta-regression to examine if the average participant age or the proportion of women in a study predicted the correlation it reported between kinesiophobia and physical activity level.    
+We conducted subgroup analyses to examine the differences in correlations between studies using different kinesiophobia measures, physical activity measures, and physical activity outcomes, as well as between studies that included participants with different health conditions. In addition, we used meta-regressions to examine if the average age of participants or the proportion of women in a study predicted the reported correlation between kinesiophobia and physical activity.    
 
-All analyses were performed in RStudio (2023.06.1+524, "Mountain Hydrangea" release) using the 'meta' and 'metafor' packages.
+All analyses were performed is RStudio integrated development environment (IDE) (2023.06.1+524, “Mountain Hydrangea” release) for R software environment (R Core Team, 2021) using the ‘meta’ and ‘metafor’ R packages (Schwarzer, 2023; Viechtbauer, 2010; Vietchbauer, 2023).
 
-## Meta-analysis results
+## Meta-analysis: Main results
 
 ```{r meta-analysis RE REML and Knapp-Hartung adjustment}
 m.cor <- metacor(cor = cor, 
@@ -51,7 +52,7 @@ m.cor <- metacor(cor = cor,
 summary(m.cor)
 ```
 
-Our meta-analysis of 40 studies (N = 4,594) revealed a statistically significant moderate negative correlation between kinesiophobia and levels of physical activity (r = -0.32; 95% CI -0.42 to -0.21; p < 0.001; Figure X). However, we observed considerable between-study statistical heterogeneity (Tau squared = 0.12, 95% CI: 0.08 to 0.22; I2 = 91.8%, 95% CI: 89.8 to 93.4%), and the prediction interval ranged from r = -0.78 to 0.36, indicating that a moderate positive correlation cannot be ruled out for future studies.
+Our meta-analysis of 40 studies (n = 4,594) revealed a statistically significant moderate negative correlation between kinesiophobia and physical activity (r = -0.32; 95% confidence interval [95% CI]: -0.42 to -0.21; p < 0.001; Figure 2). However, we observed considerable between-study statistical heterogeneity (Tau2 = 0.12, 95% CI: 0.08 to 0.22; I2 = 91.8%, 95% CI: 89.8 to 93.4%), and the prediction interval ranged from r = -0.78 to 0.36, indicating that a moderate positive correlation cannot be ruled out for future studies.
 
 
 ```{r Forest plot kinesiophobia and PA, fig.height=10, fig.width=7}
@@ -88,7 +89,7 @@ dev.off()
 forest.meta(m.cor, xlim=c(-1.0,1.0), layout = "JAMA")
 ```
 
-## Meta-analysis: subgroup analyses
+## Meta-analysis: Subgroup analyses
 
 ### Subgroup analysis by kinesiophobia measure
 
@@ -101,7 +102,7 @@ Kines_subg <- update.meta(m.cor,
 Kines_subg
 ```
 
-Subgroup analysis by kinesiophobia measure was possible only for the TSK (29 studies) and TSK-Heart (11 studies) measures. There was no statistical difference between the studies that used the TSK and the TSK-heart (p = 0.26), although the correlation was stronger with the TSK-heart measure versus TSK. Heterogeneity was also lower albeit moderate to substantial heterogeneity in the studies using TSK-heart versus TSK (see Table X).
+The test of subgroup differences between kinesiophobia measures was possible only for the TSK (k = 29) and TSK-Heart (k = 11) (Figure 3A). There was no statistical difference between the studies that used the TSK and TSK-Heart (p = 0.256), although the correlation was stronger with the TSK-heart (r = -0.54; 95% CI: -0.72 to -0.29) than with the TSK (r = -0.26; 95% CI: -0.39 to -0.12). Heterogeneity was lower, albeit moderate to substantial heterogeneity in the studies using TSK-Heart (I2 = 61.2%) than TSK (I2 = 93.0%).
 
 ```{r Forest plot for subgroup by kinesiology tool, fig.height=14, fig.width=7}
 forest.meta(Kines_subg, 
@@ -141,7 +142,7 @@ PAmeas_subg <- update.meta(m.cor,
 PAmeas_subg
 ```
 
-The test of subgroup differences between physical activity measures indicates that there was a statistical difference between studies that used accelerometers, pedometers, or questionnaires (p = 0.02). Studies that investigated the relationship between kinesiophobia and physical activity using accelerometers (k = 8) and pedometers (k = 2) reported no statistical correlation compared to a statistically significant moderate correlation in studies using self-report questionnaires (k = 30). Statistical heterogeneity was also higher in the studies using questionnaires (see Table X). 
+The test of subgroup differences between physical activity measures showed no statistical difference between studies that used questionnaires (k = 31), accelerometers (k = 7), and pedometers (k =2) (p = 0.057) (Figure 3B), although the correlation was stronger with the questionnaires (r = -0.37; 95% CI: -0.48 to -0.24) than with the accelerometers (r = -0.16; 95% CI: -0.35 to 0.04) or pedometers (r = -0.03; 95% CI: -0.99 to 0.99). Statistical heterogeneity was higher in the studies using questionnaires (I2 = 92.8%) than the ones using accelerometers (I2 = 71.5%) or pedometers (I2 = 75.9%). 
 
 ```{r Forest plot for subgroup by PA measure, fig.height=14, fig.width=9}
 forest.meta(PAmeas_subg, 
@@ -180,7 +181,7 @@ Health_subg <- update.meta(m.cor,
 Health_subg
 ```
 
-Subgroup comparisons were possible between studies comprising people with chronic pain (k = 12), cardiovascular disease (l = 11), arthritis (k = 5), and neurological conditions (k = 2), people who had received surgery (k = 3) and healthy participants (k = 4). We found statistical differences between these studies (p < 0.0001). The relationship between kinesiophobia and physical activity levels was statistically significant in only studies with chronic pain and cardiovascular disease; although the pooled correlation for chronic pain studies was small with only moderate heterogeneity.
+The test of subgroup differences between health status measures was possible between studies comprising people with chronic pain (k = 12), cardiovascular disease (k = 11), arthritis (k = 5), and neurological conditions (k = 2), people who had received surgery (k = 3), and healthy participants (k = 4) (Figure 3D). We found statistical differences between these studies (p < 0.0001). The relationship between kinesiophobia and physical activity was statistically significant only in studies that included participants with cardiovascular disease (r = -0.47; 95% CI: -0.59 to -0.32) and chronic pain, although the pooled correlation for chronic pain studies was small (r = -0.08; 95% CI: -0.17 to -0.003). Statistical heterogeneity was higher in the studies comprising people with cardiovascular disease (I2 = 83.9%) than the ones studies comprising people with chronic pain (I2 = 38.7%). The effect of arthritis (r = -0.43; 95% CI: -0.75 to 0.05) remained non-significant when osteoarthritis (k = 4) and rheumatoid arthritis (k = 1) were considered separately.
 
 ```{r Forest plot for subgroup by Health condition, fig.height=16, fig.width=9}
 forest.meta(Health_subg, 
@@ -219,7 +220,7 @@ PAout_subg <- update.meta(m.cor,
 PAout_subg
 ```
 
-We also observed statistical differences (p = 0.0005) in the pooled association by physical activity outcome type, with only the total PA outcome showing a statistical correlation. 
+The test of subgroup differences between physical activity outcomes was possible between studies using total physical activity (k = 27), counts per day (k = 4), moderate-to-vigorous physical activity (k =3), steps per day (k = 3), and a dichotomous assessment of physical activity level (low vs. high) (k = 2) (Figure 3C). We observed statistical differences between these studies (p = 0.0009), with only the total physical activity outcome showing a statistical correlation (r = -0.40; 95% CI: -0.53 to -0.26). However, we observed considerable between-study statistical heterogeneity (I2 = 93.3%).
 
 ```{r PA outcome subgroup forest plot, fig.height=14, fig.width=7}
 forest.meta(PAout_subg, 
@@ -254,12 +255,14 @@ m.cor.reg.age <- metareg(m.cor, ~Age)
 m.cor.reg.age
 ```
 
-Age did not statistically influence the meta-analysis studies' correlation values. Due to the similar I2 between this meta-regression and the main meta-analyis, the addition of age as predictor did not explain the considerable heterogeneity observed between study correlations. The R2 revealed only 1.8% of the differences bewteen study correlations can be explained by age.  
+Age did not statistically influence the correlation values of the meta-analysis studies (k = 29) (Figure 4A). Due to the similar I2 between this meta-regression and the main meta-analysis (93.6% vs. 91.8%), the addition of age as predictor did not explain the considerable heterogeneity observed between study correlations. The R2 revealed that only 1.8% of the differences between study correlations could be explained by age.  
 
 ```{r Bubble plot for meta-regression, age}
 bubble(m.cor.reg.age, 
        xlim = c(15, 80), 
-       ylim = c(-1.5, 0.5), 
+       ylim = c(-1.5, 0.5),
+       xlab = 'Age (years)',
+       font.lab = 2,
        studlab = TRUE, 
        cex = 2, 
        cex.studlab = 0.6, 
@@ -275,13 +278,36 @@ m.cor.reg.women <- metareg(m.cor, ~Prop_women)
 m.cor.reg.women
 ```
 
-Similarly, the proportion of women in studies did not influence their correlation values.
+Similarly, the proportion of women (k = 31) and the mean level of pain in the studies (k = 20) did not influence their correlation values. The R2 revealed that these variables explained less than 0.01% of the differences between study correlations. 
 
 ```{r Bubble plot for meta-regression, proportion of women}
 bubble(m.cor.reg.women, 
        xlim = c(-0.1, 1.1), 
        ylim = c(-1.5, 0.5), 
+       xlab = 'Proportion of women',
+       font.lab = 2,
        studlab = TRUE, 
+       cex = 2, 
+       cex.studlab = 0.6, 
+       pos.studlab = 1, 
+       offset = 0.5, 
+       col.line = 'red')
+```
+
+### Meta-regression - Pain
+
+```{r Meta-regression by pain}
+m.cor.reg.pain <- metareg(m.cor, ~Pain)
+m.cor.reg.pain
+```
+
+```{r Bubble plot for meta-regression, pain}
+bubble(m.cor.reg.pain, 
+       xlim = c(-1, 100), 
+       ylim = c(-1.5, 0.5), 
+       xlab = 'Pain',
+       studlab = TRUE, 
+       font.lab = 2,
        cex = 2, 
        cex.studlab = 0.6, 
        pos.studlab = 1, 
