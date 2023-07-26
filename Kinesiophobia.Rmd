@@ -208,13 +208,13 @@ forest.meta(PAout_subg,
 dev.off()
 ```
 
-### Subgroup analysis by health condition
+### Subgroup analysis by health status
 
-```{r Subgroup analysis by health condition}
-Kinphob_r$Health_condition <- as.factor(Kinphob_r$Health_condition)
+```{r Subgroup analysis by health status}
+Kinphob_r$Health_status <- as.factor(Kinphob_r$Health_status)
 
 Health_subg <- update.meta(m.cor, 
-            subgroup = Health_condition,
+            subgroup = Health_status,
             tau.common = TRUE)
 Health_subg
 ```
