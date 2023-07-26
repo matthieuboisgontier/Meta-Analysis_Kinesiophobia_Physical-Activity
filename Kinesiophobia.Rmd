@@ -313,3 +313,13 @@ bubble(m.cor.reg.pain,
        offset = 0.5, 
        col.line = 'red')
 ```
+
+References:
+- Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.).
+- Higgins, J. P. T., & Thompson, S. G. (2002). Quantifying heterogeneity in a meta-analysis. Statistics in Medicine, 21(11), 1539–1558. https://doi.org/10.1002/sim.1186
+- Knapp, G., & Hartung, J. (2003). Improved tests for a random effects meta-regression with a single covariate. Statistics in Medicine, 22(17), 2693–2710. https://doi.org/10.1002/sim.1482
+- R Core Team. (2021). R: A Language and Environment for Statistical Computing. . Foundation for Statistical Computing. https://www.r-project.org
+- Schwarzer, G. (2023). Meta: General Package for Meta-Analysis (Version 6.5-0) [R package]. https://cran.r-project.org/web/packages/meta/meta.pdf
+- Viechtbauer, W. (2005). Bias and Efficiency of Meta-Analytic Variance Estimators in the Random-Effects Model. In Journal of Educational and Behavioral Statistics (Vol. 30, Issue 3).
+- Viechtbauer, W. (2010). Conducting Meta-Analyses in R with the metafor Package. In JSS Journal of Statistical Software (Vol. 36). http://www.jstatsoft.org/
+- Vietchbauer, "W. (2023). Metafor: Meta-Analysis Package for R (Version 4.2-0) [R pakage]. https://cran.r-project.org/web/packages/metafor/metafor.pdf
