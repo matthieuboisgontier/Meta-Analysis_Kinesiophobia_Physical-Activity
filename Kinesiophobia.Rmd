@@ -1,5 +1,5 @@
 ---
-title: "Kinesiophobia_MA"
+title: "Meta-Analysis_Kinesiophobia_Physical-Activity"
 author: "IM Lahart"
 contributor: "MP Boisgontier"
 date: "2023-07-05"
