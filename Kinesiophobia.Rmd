@@ -170,44 +170,6 @@ forest.meta(PAmeas_subg,
 dev.off()
 ```
 
-### Subgroup analysis by health condition
-
-```{r Subgroup analysis by health condition}
-Kinphob_r$Health_condition <- as.factor(Kinphob_r$Health_condition)
-
-Health_subg <- update.meta(m.cor, 
-            subgroup = Health_condition,
-            tau.common = TRUE)
-Health_subg
-```
-
-The test of subgroup differences between health status measures was possible between studies comprising people with chronic pain (k = 12), cardiovascular disease (k = 11), arthritis (k = 5), and neurological conditions (k = 2), people who had received surgery (k = 3), and healthy participants (k = 4) (Figure 3D). We found statistical differences between these studies (p < 0.0001). The relationship between kinesiophobia and physical activity was statistically significant only in studies that included participants with cardiovascular disease (r = -0.47; 95% CI: -0.59 to -0.32) and chronic pain, although the pooled correlation for chronic pain studies was small (r = -0.08; 95% CI: -0.17 to -0.003). Statistical heterogeneity was higher in the studies comprising people with cardiovascular disease (I2 = 83.9%) than the ones studies comprising people with chronic pain (I2 = 38.7%). The effect of arthritis (r = -0.43; 95% CI: -0.75 to 0.05) remained non-significant when osteoarthritis (k = 4) and rheumatoid arthritis (k = 1) were considered separately.
-
-```{r Forest plot for subgroup by Health condition, fig.height=16, fig.width=9}
-forest.meta(Health_subg, 
-            layout = "RevMan5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-```
-
-```{r Save Health condition forestplot}
-png(file = "Health condition forestplot.png", width = 2800, height = 4900, res = 300)
-
-forest.meta(Health_subg, 
-            layout = "Revman5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-
-dev.off()
-```
 
 ### Subgroup analysis by physical outcome
 
@@ -237,6 +199,45 @@ forest.meta(PAout_subg,
 png(file = "PA outcome forestplot.png", width = 2800, height = 4500, res = 300)
 
 forest.meta(PAout_subg, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+
+dev.off()
+```
+
+### Subgroup analysis by health condition
+
+```{r Subgroup analysis by health condition}
+Kinphob_r$Health_condition <- as.factor(Kinphob_r$Health_condition)
+
+Health_subg <- update.meta(m.cor, 
+            subgroup = Health_condition,
+            tau.common = TRUE)
+Health_subg
+```
+
+The test of subgroup differences between health status measures was possible between studies comprising people with chronic pain (k = 12), cardiovascular disease (k = 11), arthritis (k = 5), and neurological conditions (k = 2), people who had received surgery (k = 3), and healthy participants (k = 4) (Figure 3D). We found statistical differences between these studies (p < 0.0001). The relationship between kinesiophobia and physical activity was statistically significant only in studies that included participants with cardiovascular disease (r = -0.47; 95% CI: -0.59 to -0.32) and chronic pain, although the pooled correlation for chronic pain studies was small (r = -0.08; 95% CI: -0.17 to -0.003). Statistical heterogeneity was higher in the studies comprising people with cardiovascular disease (I2 = 83.9%) than the ones studies comprising people with chronic pain (I2 = 38.7%). The effect of arthritis (r = -0.43; 95% CI: -0.75 to 0.05) remained non-significant when osteoarthritis (k = 4) and rheumatoid arthritis (k = 1) were considered separately.
+
+```{r Forest plot for subgroup by Health condition, fig.height=16, fig.width=9}
+forest.meta(Health_subg, 
+            layout = "RevMan5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+```
+
+```{r Save Health condition forestplot}
+png(file = "Health condition forestplot.png", width = 2800, height = 4900, res = 300)
+
+forest.meta(Health_subg, 
             layout = "Revman5", 
             sortvar = -TE, 
             common = FALSE, 
