@@ -1,6 +1,6 @@
 # Kinesiophobia and Physical Activity: A Systematic Review and Meta-Analysis
 
-## R script
+## Rmd script
 This repository contains an `Rmd` script "Kinesiophobia.Rmd" to conduct the meta-analysis examining the relationship between kinesiophobia and physical activity as well as subgroup meta-analyses and the meta-regressions. 
 
 ## Data for analyses in Rmd
