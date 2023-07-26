@@ -92,10 +92,10 @@ forest.meta(m.cor, xlim=c(-1.0,1.0), layout = "JAMA")
 ### Subgroup analysis by kinesiophobia measure
 
 ```{r Subgroup analysis by Kinesiophobia measure}
-Kinphob_r$Kinesiophobia_tool <- as.factor(Kinphob_r$Kinesiophobia_tool)
+Kinphob_r$Kinesiophobia_measure <- as.factor(Kinphob_r$Kinesiophobia_measure)
 
 Kines_subg <- update.meta(m.cor, 
-            subgroup = Kinesiophobia_tool, 
+            subgroup = Kinesiophobia_measure, 
             tau.common = TRUE)
 Kines_subg
 ```
