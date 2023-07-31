@@ -279,7 +279,7 @@ bubble(m.cor.reg.pain,
 ```
 
 
-## Sensitivity meta-analyses: Subgroup analyses
+## Sensitivity meta-analyses
 
 ### Subgroup analysis by physical activity measure
 
