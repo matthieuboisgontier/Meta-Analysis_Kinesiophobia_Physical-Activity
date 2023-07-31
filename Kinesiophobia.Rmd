@@ -2,7 +2,7 @@
 title: "Meta-Analysis_Kinesiophobia_Physical-Activity"
 author: "IM Lahart"
 contributor: "MP Boisgontier"
-date: "2023-07-25"
+date: "2023-07-31"
 output: html_document
 ---
 
@@ -10,7 +10,7 @@ output: html_document
 
 ```{r setup and import data file, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-Kinphob_r <- read.csv("2023-07-23_meta_analysis_kinesiophobia_r.csv", header = TRUE, sep = ",")
+Kinphob_r <- read.csv("2023-07-28_meta_analysis_kinesiophobia_r.csv", header = TRUE, sep = ",")
 ```
 
 ```{r packages, include=FALSE}
@@ -19,12 +19,12 @@ library(meta) # needed for meta-analysis
 library(metafor) # needed for meta-analysis
 ```
 
+
 ## Data file glimpse
 
 ```{r glimpse}
 glimpse(Kinphob_r)
 ```
-
 
 ## Meta-analysis method
 
@@ -35,6 +35,7 @@ We anticipated considerable between-study heterogeneity, and therefore used a ra
 We conducted subgroup analyses to examine the differences in correlations between studies using different kinesiophobia measures, physical activity measures, and physical activity outcomes, as well as between studies that included participants with different health conditions. In addition, we used meta-regressions to examine if the average age of participants or the proportion of women in a study predicted the reported correlation between kinesiophobia and physical activity.
 
 All analyses were performed is RStudio integrated development environment (IDE) (2023.06.1+524, “Mountain Hydrangea” release) for R software environment (R Core Team, 2021) using the ‘meta’ and ‘metafor’ R packages (Schwarzer, 2023; Viechtbauer, 2010; Vietchbauer, 2023).
+
 
 ## Meta-analysis: Main results
 
@@ -51,7 +52,7 @@ m.cor <- metacor(cor = cor,
 summary(m.cor)
 ```
 
-Our meta-analysis of 40 studies (n = 4,594) revealed a statistically significant moderate negative correlation between kinesiophobia and physical activity (r = -0.32; 95% confidence interval [95% CI]: -0.42 to -0.21; p < 0.001; Figure 2). However, we observed considerable between-study statistical heterogeneity (Tau2 = 0.12, 95% CI: 0.08 to 0.22; I2 = 91.8%, 95% CI: 89.8 to 93.4%), and the prediction interval ranged from r = -0.78 to 0.36, indicating that a moderate positive correlation cannot be ruled out for future studies.
+Our meta-analysis of 41 studies (n = 4,848) revealed a statistically significant moderate negative correlation between kinesiophobia and physical activity (r = -0.31; 95% confidence interval [95% CI]: -0.42 to -0.20; p < 0.0001; Figure 2). However, we observed considerable between-study statistical heterogeneity (Tau2 = 0.12, 95% CI: 0.08 to 0.22; I2 = 91.8%, 95% CI: 89.9 to 93.5%), and the prediction interval ranged from r = -0.78 to 0.37, indicating that a moderate positive correlation cannot be ruled out for future studies.
 
 
 ```{r Forest plot kinesiophobia and PA, fig.height=10, fig.width=7}
@@ -87,126 +88,8 @@ dev.off()
 forest.meta(m.cor, xlim=c(-1.0,1.0), layout = "JAMA")
 ```
 
+
 ## Meta-analysis: Subgroup analyses
-
-### Subgroup analysis by kinesiophobia measure
-
-```{r Subgroup analysis by Kinesiophobia measure}
-Kinphob_r$Kinesiophobia_measure <- as.factor(Kinphob_r$Kinesiophobia_measure)
-
-Kines_subg <- update.meta(m.cor, 
-            subgroup = Kinesiophobia_measure, 
-            tau.common = TRUE)
-Kines_subg
-```
-
-The test of subgroup differences between kinesiophobia measures was possible only for the TSK (k = 29) and TSK-Heart (k = 11) (Figure 3A). There was no statistical difference between the studies that used the TSK and TSK-Heart (p = 0.256), although the correlation was stronger with the TSK-heart (r = -0.54; 95% CI: -0.72 to -0.29) than with the TSK (r = -0.26; 95% CI: -0.39 to -0.12). Heterogeneity was lower, albeit moderate to substantial heterogeneity in the studies using TSK-Heart (I2 = 61.2%) than TSK (I2 = 93.0%).
-
-```{r Forest plot for subgroup by kinesiology tool, fig.height=14, fig.width=7}
-forest.meta(Kines_subg, 
-            layout = "Revman5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-```
-
-```{r Save Kinesiophobia measure forestplot}
-png(file = "Kinesiophobia measure forestplot.png", width = 2800, height = 4000, res = 300)
-
-forest.meta(Kines_subg, 
-            layout = "Revman5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-
-dev.off()
-```
-
-
-### Subgroup analysis by physical activity measure
-
-```{r Subgroup analysis by PA measure}
-Kinphob_r$PA_measure <- as.factor(Kinphob_r$PA_measure)
-
-PAmeas_subg <- update.meta(m.cor, 
-            subgroup = PA_measure, 
-            tau.common = TRUE)
-PAmeas_subg
-```
-
-The test of subgroup differences between physical activity measures showed no statistical difference between studies that used questionnaires (k = 31), accelerometers (k = 7), and pedometers (k =2) (p = 0.057) (Figure 3B), although the correlation was stronger with the questionnaires (r = -0.37; 95% CI: -0.48 to -0.24) than with the accelerometers (r = -0.16; 95% CI: -0.35 to 0.04) or pedometers (r = -0.03; 95% CI: -0.99 to 0.99). Statistical heterogeneity was higher in the studies using questionnaires (I2 = 92.8%) than the ones using accelerometers (I2 = 71.5%) or pedometers (I2 = 75.9%). 
-
-```{r Forest plot for subgroup by PA measure, fig.height=14, fig.width=9}
-forest.meta(PAmeas_subg, 
-            layout = "Revman5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-```
-
-```{r Save PA measure forestplot}
-png(file = "Physical activity measure forestplot.png", width = 2800, height = 4000, res = 300)
-
-forest.meta(PAmeas_subg, 
-            layout = "Revman5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-
-dev.off()
-```
-
-
-### Subgroup analysis by physical outcome
-
-```{r Subgroup analysis by PA outcome}
-Kinphob_r$PA_outcome <- as.factor(Kinphob_r$PA_outcome)
-
-PAout_subg <- update.meta(m.cor, 
-            subgroup = PA_outcome, 
-            tau.common = TRUE)
-PAout_subg
-```
-
-The test of subgroup differences between physical activity outcomes was possible between studies using total physical activity (k = 27), counts per day (k = 4), moderate-to-vigorous physical activity (k =3), steps per day (k = 3), and a dichotomous assessment of physical activity level (low vs. high) (k = 2) (Figure 3C). We observed statistical differences between these studies (p = 0.0009), with only the total physical activity outcome showing a statistical correlation (r = -0.40; 95% CI: -0.53 to -0.26). However, we observed considerable between-study statistical heterogeneity (I2 = 93.3%).
-
-```{r PA outcome subgroup forest plot, fig.height=14, fig.width=7}
-forest.meta(PAout_subg, 
-            layout = "RevMan5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-```
-
-```{r Save PA outcome forestplot}
-png(file = "PA outcome forestplot.png", width = 2800, height = 4500, res = 300)
-
-forest.meta(PAout_subg, 
-            layout = "Revman5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-
-dev.off()
-```
 
 ### Subgroup analysis by health status
 
@@ -219,9 +102,9 @@ Health_subg <- update.meta(m.cor,
 Health_subg
 ```
 
-The test of subgroup differences between health status measures was possible between studies comprising people with chronic pain (k = 12), cardiovascular disease (k = 11), arthritis (k = 5), and neurological conditions (k = 2), people who had received surgery (k = 3), and healthy participants (k = 4) (Figure 3D). We found statistical differences between these studies (p < 0.0001). The relationship between kinesiophobia and physical activity was statistically significant only in studies that included participants with cardiovascular disease (r = -0.47; 95% CI: -0.59 to -0.32) and chronic pain, although the pooled correlation for chronic pain studies was small (r = -0.08; 95% CI: -0.17 to -0.003). Statistical heterogeneity was higher in the studies comprising people with cardiovascular disease (I2 = 83.9%) than the ones studies comprising people with chronic pain (I2 = 38.7%). The effect of arthritis (r = -0.43; 95% CI: -0.75 to 0.05) remained non-significant when osteoarthritis (k = 4) and rheumatoid arthritis (k = 1) were considered separately.
+The test of subgroup differences between health status measures was possible between studies comprising people with chronic pain (k = 11), cardiovascular disease (k = 11), arthritis (k = 6), and neurological conditions (k = 2), people who had received surgery (k = 4), and older adults (k = 3) (Figure 3D). We found statistical differences between these studies (p < 0.0001). The relationship between kinesiophobia and physical activity was statistically significant only in studies that included participants with cardiovascular disease (r = -0.47; 95% CI: -0.59 to -0.32) and arthritis (r = -0.42; 95% CI: -0.69 to -0.05). The effect of arthritis remained non-significant when focusing on osteoarthritis (k = 5) (r = -0.48; 95% CI: -0.76 to -0.35). Statistical heterogeneity was higher in the studies comprising people with arthritis (I2 = 92.7%) than the ones studies comprising people with cardiovascular disease (I2 = 83.9%). 
 
-```{r Forest plot for subgroup by Health condition, fig.height=16, fig.width=9}
+```{r Forest plot for subgroup by Health condition, fig.height=18, fig.width=9}
 forest.meta(Health_subg, 
             layout = "RevMan5", 
             sortvar = -TE, 
@@ -233,7 +116,7 @@ forest.meta(Health_subg,
 ```
 
 ```{r Save Health condition forestplot}
-png(file = "Health condition forestplot.png", width = 2800, height = 4900, res = 300)
+png(file = "Health condition forestplot.png", width = 2800, height = 5600, res = 300)
 
 forest.meta(Health_subg, 
             layout = "Revman5", 
@@ -247,6 +130,87 @@ forest.meta(Health_subg,
 dev.off()
 ```
 
+
+### Subgroup analysis by physical activity measure objectivity  
+
+```{r Subgroup analysis by PA objectivity}
+Kinphob_r$PA_obj_subj <- as.factor(Kinphob_r$PA_obj_subj)
+
+PAobj_subg <- update.meta(m.cor, 
+            subgroup = PA_obj_subj, 
+            tau.common = TRUE)
+PAobj_subg
+```
+
+The test of subgroup differences between self-reported (k = 32) and device-based (k = 9) measures of physical activity showed a statistical difference between these groups (p = 0.011), with only the self-reported measures showing a statistical correlation (r = -0.36; 95% CI: -0.48 to -0.24)  (Figure 3B). However, we observed considerable between-study statistical heterogeneity (I2 = 92.9%).
+
+```{r PA measure objectivity subgroup forest plot, fig.height=14, fig.width=7}
+forest.meta(PAobj_subg, 
+            layout = "RevMan5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+```
+
+```{r Save PA objectivity forestplot}
+png(file = "PA objectivity forestplot.png", width = 2800, height = 4500, res = 300)
+
+forest.meta(PAobj_subg, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+
+dev.off()
+```
+
+
+### Subgroup analysis by kinesiophobia measure
+
+```{r Subgroup analysis by Kinesiophobia measure}
+Kinphob_r$Kinesiophobia_measure <- as.factor(Kinphob_r$Kinesiophobia_measure)
+
+Kines_subg <- update.meta(m.cor, 
+            subgroup = Kinesiophobia_measure, 
+            tau.common = TRUE)
+Kines_subg
+```
+
+The test of subgroup differences between kinesiophobia measures was possible only for TSK-17 (k = 21), TSK-Heart (k = 11), and TSK-11 (Figure 3A), with only the former ones showing a statistical correlation. The correlation was stronger in studies using the TSK-Heart (r = -0.59; 95% CI: -0.75 to -0.36) than with the TSK-17 (r = -0.28; 95% CI: -0.43 to -0.11). Heterogeneity was lower, albeit substantial to considerable heterogeneity in the studies using TSK-Heart (I2 = 85.0%) than TSK-17 (I2 = 92.6%).
+
+```{r Forest plot for subgroup by kinesiophobia tool, fig.height=16, fig.width=7}
+forest.meta(Kines_subg, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+```
+
+```{r Save Kinesiophobia measure forestplot}
+png(file = "Kinesiophobia measure forestplot.png", width = 2800, height = 4700, res = 300)
+
+forest.meta(Kines_subg, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+
+dev.off()
+```
+
+
 ### Meta-regression - Age
 
 ```{r Meta-regression by age}
@@ -254,7 +218,7 @@ m.cor.reg.age <- metareg(m.cor, ~Age)
 m.cor.reg.age
 ```
 
-Age did not statistically influence the correlation values of the meta-analysis studies (k = 29) (Figure 4A). Due to the similar I2 between this meta-regression and the main meta-analysis (93.6% vs. 91.8%), the addition of age as predictor did not explain the considerable heterogeneity observed between study correlations. The R2 revealed that only 1.8% of the differences between study correlations could be explained by age.  
+Age did not statistically influence the correlation values of the meta-analysis studies (k = 31) (Figure 4A). Due to the similar I2 between this meta-regression and the main meta-analysis (92.6% vs. 91.8%, respectively), the addition of age as predictor did not explain the considerable heterogeneity observed between study correlations. The R2 revealed that only 1.0% of the differences between study correlations could be explained by age.
 
 ```{r Bubble plot for meta-regression, age}
 bubble(m.cor.reg.age, 
@@ -277,7 +241,7 @@ m.cor.reg.women <- metareg(m.cor, ~Prop_women)
 m.cor.reg.women
 ```
 
-Similarly, the proportion of women (k = 31) and the mean level of pain in the studies (k = 20) did not influence their correlation values. The R2 revealed that these variables explained less than 0.01% of the differences between study correlations. 
+Similarly, the proportion of women (k = 33) and the mean level of pain in the studies (k = 23) did not influence correlation values (Figure 4B and 4C, respectively). The R2 revealed that these variables explained less than 0.01% of the differences between study correlations.
 
 ```{r Bubble plot for meta-regression, proportion of women}
 bubble(m.cor.reg.women, 
@@ -314,7 +278,90 @@ bubble(m.cor.reg.pain,
        col.line = 'red')
 ```
 
-References:  
+
+## Sensitivity meta-analyses: Subgroup analyses
+
+### Subgroup analysis by physical activity measure
+
+```{r Subgroup analysis by PA measure}
+Kinphob_r$PA_measure <- as.factor(Kinphob_r$PA_measure)
+
+PAmeas_subg <- update.meta(m.cor, 
+            subgroup = PA_measure, 
+            tau.common = TRUE)
+PAmeas_subg
+```
+
+The test of subgroup differences between physical activity measures described more specifically was possible between studies using the IPAQ (k = 18), MLTPAQ (k = 2), GLTEQ (k = 2), BHPAQ (k = 2), as well as accelerometers (k = 8) and pedometers (k = 2). We found statistical differences between these studies (p = 0.014). The relationship between kinesiophobia and physical activity was statistically significant only in studies that used the IPAQ to measure physical activity (r = -0.43; 95% CI: -0.57 to -0.26). However, we observed considerable between-study statistical heterogeneity (I2 = 89.7%). 
+
+```{r Forest plot for subgroup by PA measure, fig.height=18, fig.width=9}
+forest.meta(PAmeas_subg, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+```
+```{r Save PA measure forestplot}
+png(file = "Physical activity measure forestplot.png", width = 2800, height = 5600, res = 300)
+
+forest.meta(PAmeas_subg, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+
+dev.off()
+```
+
+
+### Subgroup analysis by physical outcome
+
+```{r Subgroup analysis by PA outcome}
+Kinphob_r$PA_outcome <- as.factor(Kinphob_r$PA_outcome)
+
+PAout_subg <- update.meta(m.cor, 
+            subgroup = PA_outcome, 
+            tau.common = TRUE)
+PAout_subg
+```
+
+The test of subgroup differences between physical activity outcomes was possible between studies using MET-min/week from the IPAQ (k = 16), a score from a questionnaire (k = 10), steps/day (k = 4), low versus high level of physical activity (k = 4), counts/min (k =3), and a dichotomous assessment of physical activity level (low vs. high) (k = 2) (Figure 3C). We observed statistical differences between these studies (p = 0.0002), with only the studies using the MET-min/week  (r = -0.45; 95% CI: -0.60 to -0.26) or score outcome (r = -0.33; 95% CI: -0.57 to -0.02) showing a statistical correlation. Heterogeneity was considerable in studies relying on these outcomes (I2 = 90.7 and 95.5%, respectively).
+Results of these sensitivity analyses are consitent with the main results suggesting that the relationship between kinesiophobia and physical activity is observed only when self-reporeted measures of physical activity are used.
+
+```{r PA outcome subgroup forest plot, fig.height=18, fig.width=7}
+forest.meta(PAout_subg, 
+            layout = "RevMan5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+```
+
+```{r Save PA outcome forestplot}
+png(file = "PA outcome forestplot.png", width = 2800, height = 5600, res = 300)
+
+forest.meta(PAout_subg, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+
+dev.off()
+```
+
+
+## References:  
 - Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.).  
 - Higgins, J. P. T., & Thompson, S. G. (2002). Quantifying heterogeneity in a meta-analysis. Statistics in Medicine, 21(11), 1539–1558. https://doi.org/10.1002/sim.1186  
 - Knapp, G., & Hartung, J. (2003). Improved tests for a random effects meta-regression with a single covariate. Statistics in Medicine, 22(17), 2693–2710. https://doi.org/10.1002/sim.1482  
