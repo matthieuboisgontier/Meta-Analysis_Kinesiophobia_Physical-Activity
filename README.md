@@ -5,3 +5,6 @@ This repository contains an `Rmd` script "Kinesiophobia.Rmd" to conduct the meta
 
 ## Data for analyses in Rmd
 The data used in the Rmd script is in "2023-07-23_meta_analysis_kinesiophobia_r.csv".
+
+## Data from authors
+Corresponding authors of articles that did not reported a correlation estimate of the association between kinesiophobia and physical activity were contacted. The Information_from_corresponding_authors.xls file reports the estimates or data they sent us.
