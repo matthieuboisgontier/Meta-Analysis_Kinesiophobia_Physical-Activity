@@ -334,7 +334,7 @@ PAout_subg
 The test of subgroup differences between physical activity outcomes was possible between studies using MET-min/week from the IPAQ (k = 16), a score from a questionnaire (k = 10), steps/day (k = 4), low versus high level of physical activity (k = 4), counts/min (k =3), and a dichotomous assessment of physical activity level (low vs. high) (k = 2) (Figure 3C). We observed statistical differences between these studies (p = 0.0002), with only the studies using the MET-min/week  (r = -0.45; 95% CI: -0.60 to -0.26) or score outcome (r = -0.33; 95% CI: -0.57 to -0.02) showing a statistical correlation. Heterogeneity was considerable in studies relying on these outcomes (I2 = 90.7 and 95.5%, respectively).
 Results of these sensitivity analyses are consitent with the main results suggesting that the relationship between kinesiophobia and physical activity is observed only when self-reporeted measures of physical activity are used.
 
-```{r PA outcome subgroup forest plot, fig.height=18, fig.width=7}
+```{r PA outcome subgroup forest plot, fig.height=18, fig.width=9}
 forest.meta(PAout_subg, 
             layout = "RevMan5", 
             sortvar = -TE, 
