@@ -1,0 +1,42 @@
+author,cor,n,Health_status,PA_obj_subj,Kinesiophobia_measure,PA_measure,PA_outcome,Age,Prop_women,Pain,PA_raw_measure
+"Altug, 2016",-0.096,112,Chronic pain,Self-reported measure,TSK_17,IPAQ,MET-min/week ,45,0.65,34.5,Questionnaire
+"Ayedemir, 2022",-0.773,37,Arthritis,Self-reported measure,TSK_17,UCLA,Score,58.8,0.68,52,Questionnaire
+Baday-Keskin 2022,-0.12,88,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,52,0.76,48,Questionnaire
+"Carvalho, 2017",-0.02,119,Chronic pain,Device-based measure,TSK_17,Accelerometer,Counts/min,39.1,0.69,67,Accelerometer
+"Dabek, 2020a",-0.428,72,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,Questionnaire
+"Dabek, 2020b",-0.868,18,Neurological condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,Questionnaire
+"Dabek, 2020c",-0.523,130,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,Questionnaire
+"Dabek, 2020d",-0.41,119,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,Questionnaire
+"Dabek, 2020e",-0.201,27,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,Questionnaire
+"Dabek, 2020f",-0.563,86,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,Questionnaire
+"Dabek, 2020g",-0.663,15,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,Questionnaire
+"Demirbuken, 2016",-0.153,99,Chronic pain,Self-reported measure,TSK_17,IPAQ,MET-min/week ,43.5,0.66,64.7,Questionnaire
+"Helmus, 2012",-0.05,53,Chronic pain,Device-based measure,TSK_17,Accelerometer,Counts/min,39.9,0.7,58,Accelerometer
+"Kilinc, 2019",-0.693,200,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,53.2,0.6,50.2,Questionnaire
+"Koho, 2011",0.1,93,Chronic pain,Self-reported measure,TSK_17,MLTPAQ,Score,44,0.65,64.4,Questionnaire
+"Marques-Sule, 2022",-0.32,117,Cardiovascular condition,Self-reported measure,TSK_11,IPAQ,MET-min/week ,56,0.44,,Questionnaire
+"Miller, 2018",-0.54,52,Older age,Device-based measure,TSK_17,Accelerometer,Steps/day,67.4,0.62,28,Accelerometer
+"Minetama, 2022",-0.229,71,Chronic pain,Device-based measure,TSK_11,Pedometer,Steps/day,71.6,0.51,62,Pedometer
+Navarro-Ledesma 2022,-0.059,41,Chronic pain,Self-reported measure,TSK_11,GLTEQ,Score,52.6,1,,Questionnaire
+"Norte, 2019",-0.312,77,Surgery,Self-reported measure,TSK_17,GLTEQ,Score,21.6,0.45,91.4,Questionnaire
+"Ozer, 2022",-0.889,62,Pulmonary condition,Self-reported measure,TSK_17,IPAQ,MET-min/week ,36.8,0.48,,Questionnaire
+"Pedler, 2018",0.14,103,Chronic pain,Device-based measure,TSK_11,Accelerometer,Active time,39.7,0.72,40,Accelerometer
+"Sahin, 2021",-0.315,98,Cardiovascular condition,Self-reported measure,TSK_17,IPAQ,MET-min/week ,58.1,0.36,60.1,Questionnaire
+"Selcuk, 2020a",-0.247,67,Arthritis,Self-reported measure,TSK_17,IPAQ,Low vs High,60.6,1,46,Questionnaire
+"Selcuk, 2020b",-0.309,29,Arthritis,Self-reported measure,TSK_17,IPAQ,Low vs High,61.6,0,29,Questionnaire
+"Sertel, 2021",-0.021,163,Chronic pain,Self-reported measure,TSK_17,PASE,Score,71.4,0.47,,Questionnaire
+"Spaderna, 2020",-0.28,61,Cardiovascular condition,Device-based measure,FActS,Accelerometer,Kcal/day,67.5,0.21,,Accelerometer
+"Wasiuk-Zowada, 2022",-0.363,80,Neurological condition,Self-reported measure,TSK_17,BHPAQ,Score,45.5,0.75,35,Questionnaire
+"Zelle, 2016",-0.22,487,Surgery,Self-reported measure,TSK_11,MLTPAQ,MET-min/week ,51.6,0.43,,Questionnaire
+"Priore, 2020",-0.251,50,Acute_pain,Self-reported measure,TSK_17,IPAQ,MET-min/week ,22.4,0.74,,Questionnaire
+"Strandberg, 2022",-0.084,451,Cancer,Self-reported measure,TSK_14,Accelerometer,Active time,,,,Accelerometer
+Assadourian 2020,-0.022,123,Chronic pain,Self-reported measure,TSK_17,Diary,Low vs High,49,0.6,67,Diary
+Luthi 2022,0.067,433,Chronic pain,Self-reported measure,TSK_17,BHPAQ,Score,,0.18,44.5,Questionnaire
+Baez 2020,0.181,40,Surgery,Device-based measure,TSK_11,Pedometer,Steps/day,24.3,0.63,81.5,Pedometer
+Bernard 2015 ,-0.05,121,Older age,Self-reported measure,TSK_17,Questionnaire,Score,65.5,1,,Questionnaire
+Ozdemir 2021,-0.007,101,Young adults,Self-reported measure,TSK_17,IPAQ,MET-min/week ,33.9,0.58,30.7,Questionnaire
+Uritani 2020,-0.163,167,Arthritis,Device-based measure,BFOMSO,Accelerometer,Steps/day,62.2,0.63,57,Accelerometer
+Saulicz 2016,-0.577,105,Older age,Self-reported measure,KCS,BHPAQ,Score,,1,,Questionnaire
+Knapik 2019,-0.8,135,Cardiovascular condition,Self-reported measure,TSK_Heart,PAQE,Score,71.9,0.44,,Questionnaire
+Roaldsen 2009,-0.39,98,Cardiovascular condition,Self-reported measure,FABQ,SGPALS,Low vs High,76,0.63,26.5,Questionnaire
+"Coronado, 2021",-0.05,248,Surgery,Device-based measure,TSK_13,Accelerometer,Counts/min,62.2,0.51,31,Accelerometer
