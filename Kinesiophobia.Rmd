@@ -134,10 +134,10 @@ dev.off()
 ### Subgroup analysis by physical activity measure objectivity  
 
 ```{r Subgroup analysis by PA objectivity}
-Kinphob_r$PA_obj_subj <- as.factor(Kinphob_r$PA_obj_subj)
+Kinphob_r$PA_objectivity <- as.factor(Kinphob_r$PA_objectivity)
 
 PAobj_subg <- update.meta(m.cor, 
-            subgroup = PA_obj_subj, 
+            subgroup = PA_objectivity, 
             tau.common = TRUE)
 PAobj_subg
 ```
