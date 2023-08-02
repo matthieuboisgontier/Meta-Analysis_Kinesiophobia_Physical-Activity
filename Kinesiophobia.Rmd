@@ -144,7 +144,7 @@ PAobj_subg
 
 The test of subgroup differences between self-reported (k = 32) and device-based (k = 9) measures of physical activity showed a statistical difference between these groups (p = 0.011), with only the self-reported measures showing a statistical correlation (r = -0.36; 95% CI: -0.48 to -0.24)  (Figure 3B). However, we observed considerable between-study statistical heterogeneity (I2 = 92.9%).
 
-```{r PA measure objectivity subgroup forest plot, fig.height=14, fig.width=7}
+```{r PA measure objectivity subgroup forest plot, fig.height=14, fig.width=8}
 forest.meta(PAobj_subg, 
             layout = "RevMan5", 
             sortvar = -TE, 
@@ -184,7 +184,7 @@ Kines_subg
 
 The test of subgroup differences between kinesiophobia measures was possible only for TSK-17 (k = 21), TSK-Heart (k = 11), and TSK-11 (Figure 3A), with only the former ones showing a statistical correlation. The correlation was stronger in studies using the TSK-Heart (r = -0.59; 95% CI: -0.75 to -0.36) than with the TSK-17 (r = -0.28; 95% CI: -0.43 to -0.11). Heterogeneity was lower, albeit substantial to considerable heterogeneity in the studies using TSK-Heart (I2 = 85.0%) than TSK-17 (I2 = 92.6%).
 
-```{r Forest plot for subgroup by kinesiophobia tool, fig.height=16, fig.width=7}
+```{r Forest plot for subgroup by kinesiophobia tool, fig.height=16, fig.width=8}
 forest.meta(Kines_subg, 
             layout = "Revman5", 
             sortvar = -TE, 
