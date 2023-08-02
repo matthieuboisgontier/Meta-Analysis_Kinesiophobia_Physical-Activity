@@ -10,7 +10,7 @@ output: html_document
 
 ```{r setup and import data file, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-Kinphob_r <- read.csv("2023-08-01_meta_analysis_kinesiophobia_r.csv", header = TRUE, sep = ",")
+Kinphob_r <- read.csv("2023-08-02_meta_analysis_kinesiophobia_r.csv", header = TRUE, sep = ",")
 ```
 
 ```{r packages, include=FALSE}
