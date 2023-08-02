@@ -2,7 +2,7 @@
 title: "Meta-Analysis_Kinesiophobia_Physical-Activity"
 author: "IM Lahart"
 contributor: "MP Boisgontier"
-date: "2023-07-31"
+date: "2023-08-02"
 output:
   pdf_document:
     latex_engine: xelatex
