@@ -59,7 +59,6 @@ summary(m.cor)
 
 Our meta-analysis of 41 studies (n = 4,848) revealed a statistically significant moderate negative correlation between kinesiophobia and physical activity (r = -0.31; 95% confidence interval [95% CI]: -0.42 to -0.20; p < 0.0001; Figure 2). However, we observed considerable between-study statistical heterogeneity (Tau2 = 0.12, 95% CI: 0.08 to 0.22; I2 = 91.8%, 95% CI: 89.9 to 93.5%), and the prediction interval ranged from r = -0.78 to 0.37, indicating that a moderate positive correlation cannot be ruled out for future studies.
 
-
 ```{r Forest plot kinesiophobia and PA, fig.height=11, fig.width=8}
 
 forest.meta(m.cor, 
