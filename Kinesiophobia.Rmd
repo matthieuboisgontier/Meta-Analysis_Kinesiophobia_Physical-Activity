@@ -217,40 +217,6 @@ forest.meta(PAobj_subg,
 dev.off()
 ```
 
-```{r Subgroup analysis by PA objectivity with Spearman rho}
-Kinphob_rho$PA_objectivity <- as.factor(Kinphob_rho$PA_objectivity)
-
-PAobj_subg_rho <- update.meta(m.rho, 
-            subgroup = PA_objectivity, 
-            tau.common = TRUE)
-PAobj_subg_rho
-```
-
-```{r PA measure objectivity subgroup with Spearman rho forest plot, fig.height=12, fig.width=8}
-forest.meta(PAobj_subg_rho, 
-            layout = "RevMan5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-```
-
-```{r Save PA objectivity whith Spearman rho forestplot}
-png(file = "PA objectivity based on Spearman rho forestplot.png", width = 2800, height = 4500, res = 300)
-
-forest.meta(PAobj_subg_rho, 
-            layout = "Revman5", 
-            sortvar = -TE, 
-            common = FALSE, 
-            xlim = c(-1.0, 0.5), 
-            prediction = TRUE, 
-            fs.hetstat = 10, 
-            addrows.below.overall = 2)
-
-dev.off()
-```
 
 ## Subgroup analysis by kinesiophobia measure
 
