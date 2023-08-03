@@ -33,11 +33,13 @@ glimpse(Kinphob_r)
 glimpse(Kinphob_rho)
 ```
 
+
 # Meta-analysis method
 
 In our meta-analysis, we pooled Pearson product-moment correlations from eligible studies to examine the relationship between kinesiophobia and physical activity. Correlations were pooled using the generic inverse pooling method via the ‘metacor’ function in the R ‘meta’ package (Schwarzer, 2023). This function automatically performs a necessary Fisher’s z-transformation on the original, untransformed correlations prior to pooling. The ‘metacor’ function also reconverts the pooled association back to its original form for ease of interpretation. We anticipated considerable between-study heterogeneity, and therefore used a random-effects model to pool correlations. The restricted maximum likelihood (RML) estimator (Viechtbauer, 2005) was used to calculate the heterogeneity variance Tau2. In addition to Tau2, to quantify between-study heterogeneity, we also reported the I2 statistic, which provides the percentage of variability in the correlations that is not caused by sampling error (Higgins & Thompson, 2002). The I2 statistic was interpreted as follows: 0-40%, may not be important; 30-60%, may represent moderate heterogeneity; 50-90%, may represent substantial heterogeneity; and 75-100%, may represent considerable heterogeneity. To reduce the risk of false positives, we used a Knapp-Hartung adjustment (Knapp & Hartung, 2003) to calculate the confidence interval around the pooled association. We also report the prediction interval, which provides a range within which we can expect the associations of future studies to fall based on the current evidence. The pooled correlation was interpreted using Cohen’s (1988) conventions: r ≈ -0.10, small negative correlation; r ≈ -0.30, moderate negative correlation; r ≈ -0.50, large negative correlation.
 
 We conducted subgroup analyses to examine the differences in correlations between studies using different kinesiophobia measures, physical activity measures, and physical activity outcomes, as well as between studies that included participants with different health conditions. In addition, we used meta-regressions to examine if the average age of participants or the proportion of women in a study predicted the reported correlation between kinesiophobia and physical activity. All analyses were performed is RStudio integrated development environment (IDE) (2023.06.1+524, “Mountain Hydrangea” release) for R software environment (R Core Team, 2021) using the ‘meta’ and ‘metafor’ R packages (Schwarzer, 2023; Viechtbauer, 2010; Vietchbauer, 2023).
+
 
 # Meta-analysis: Main analyses
 ## Meta-analysis: Primary analysis
@@ -335,6 +337,7 @@ forest.meta(PAout_subg,
 dev.off()
 ```
 
+
 # Meta-analysis: meta-regression
 
 ## Meta-regression by age
@@ -360,6 +363,7 @@ bubble(m.cor.reg.age,
        col.line = 'red')
 ```
 
+
 ## Meta-regression by proportion of women
 
 ```{r Meta-regression by proportion of women}
@@ -383,6 +387,7 @@ bubble(m.cor.reg.women,
        col.line = 'red')
 ```
 
+
 ## Meta-regression by pain
 
 ```{r Meta-regression by pain}
@@ -403,6 +408,7 @@ bubble(m.cor.reg.pain,
        offset = 0.5, 
        col.line = 'red')
 ```
+
 
 # References
 
