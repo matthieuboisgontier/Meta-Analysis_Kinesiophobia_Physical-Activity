@@ -2,7 +2,7 @@
 title: "Meta-Analysis_Kinesiophobia_Physical-Activity"
 author: "IM Lahart"
 contributor: "MP Boisgontier"
-date: "2023-08-02"
+date: "2023-07-31"
 output:
   pdf_document:
     latex_engine: xelatex
@@ -15,7 +15,9 @@ output:
 ```{r setup and import data file, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 Kinphob_r <- read.csv("2023-08-02_meta_analysis_kinesiophobia_r.csv", header = TRUE, sep = ",")
+Kinphob_rho <- read.csv("2023-08-03_meta_analysis_kinesiophobia_rho.csv", header = TRUE, sep = ",")
 ```
+
 
 ```{r packages, include=FALSE}
 library(tidyverse) # needed for 'glimpse'
@@ -28,6 +30,7 @@ library(metafor) # needed for meta-analysis
 
 ```{r glimpse, include=FALSE}
 glimpse(Kinphob_r)
+glimpse(Kinphob_rho)
 ```
 
 # Meta-analysis method
@@ -36,7 +39,8 @@ In our meta-analysis, we pooled Pearson product-moment correlations from eligibl
 
 We conducted subgroup analyses to examine the differences in correlations between studies using different kinesiophobia measures, physical activity measures, and physical activity outcomes, as well as between studies that included participants with different health conditions. In addition, we used meta-regressions to examine if the average age of participants or the proportion of women in a study predicted the reported correlation between kinesiophobia and physical activity. All analyses were performed is RStudio integrated development environment (IDE) (2023.06.1+524, “Mountain Hydrangea” release) for R software environment (R Core Team, 2021) using the ‘meta’ and ‘metafor’ R packages (Schwarzer, 2023; Viechtbauer, 2010; Vietchbauer, 2023).
 
-# Meta-analysis: main results
+# Meta-analysis: Main analyses
+## Meta-analysis: Primary analysis
 
 ```{r meta-analysis RE REML and Knapp-Hartung adjustment}
 m.cor <- metacor(cor = cor, 
@@ -71,6 +75,54 @@ forest.meta(m.cor,
 png(file = "Main analysis forestplot.png", width = 2800, height = 3800, res = 300)
 
 forest.meta(m.cor, 
+            layout = "Revman5",
+            sortvar = -TE,
+            prediction = TRUE, 
+            print.tau2 = FALSE,
+            leftlabs = c("Author", "n"),
+            xlim=c(-1.0,1.0),
+            fs.hetstat = 10,
+            addrows.below.overall = 2)
+
+dev.off()
+```
+
+
+## Meta-analysis: Post-hoc analysis (Spearman rho)
+
+```{r secondary meta-analysis RE REML and Knapp-Hartung adjustment}
+m.rho <- metacor(cor = rho, 
+                 n = n,
+                 studlab = author,
+                 data = Kinphob_rho,
+                 fixed = FALSE,
+                 random = TRUE,
+                 method.tau = "REML",
+                 hakn = TRUE,
+                 title = "Kinesiophobia and physical activity behaviour based on Spearman rho")
+summary(m.rho)
+```
+
+The post-hoc analysis based on Spearman’s rho values provided no evidence of an association between kinesiophobia and objective measures of physical activity. 
+
+```{r Forest plot secondary analysis kinesiophobia and PA, fig.height=3, fig.width=8}
+
+forest.meta(m.rho, 
+            layout = "Revman5",
+            sortvar = -TE,
+            prediction = TRUE, 
+            print.tau2 = FALSE,
+            leftlabs = c("Author", "n"),
+            xlim=c(-1.0,1.0),
+            fs.hetstat = 10,
+            addrows.below.overall = 2)
+```
+
+
+```{r Save Forest plot secondary analysis}
+png(file = "Secondary analysis forestplot.png", width = 2000, height = 1100, res = 300)
+
+forest.meta(m.rho, 
             layout = "Revman5",
             sortvar = -TE,
             prediction = TRUE, 
@@ -165,6 +217,40 @@ forest.meta(PAobj_subg,
 dev.off()
 ```
 
+```{r Subgroup analysis by PA objectivity with Spearman rho}
+Kinphob_rho$PA_objectivity <- as.factor(Kinphob_rho$PA_objectivity)
+
+PAobj_subg_rho <- update.meta(m.rho, 
+            subgroup = PA_objectivity, 
+            tau.common = TRUE)
+PAobj_subg_rho
+```
+
+```{r PA measure objectivity subgroup with Spearman rho forest plot, fig.height=12, fig.width=8}
+forest.meta(PAobj_subg_rho, 
+            layout = "RevMan5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+```
+
+```{r Save PA objectivity whith Spearman rho forestplot}
+png(file = "PA objectivity based on Spearman rho forestplot.png", width = 2800, height = 4500, res = 300)
+
+forest.meta(PAobj_subg_rho, 
+            layout = "Revman5", 
+            sortvar = -TE, 
+            common = FALSE, 
+            xlim = c(-1.0, 0.5), 
+            prediction = TRUE, 
+            fs.hetstat = 10, 
+            addrows.below.overall = 2)
+
+dev.off()
+```
 
 ## Subgroup analysis by kinesiophobia measure
 
