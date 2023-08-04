@@ -494,4 +494,4 @@ bubble(m.cor.reg.pain,
 - Viechtbauer W. Bias and efficiency of meta-analytic variance estimators in the random-effects model. J Educ Behav Stat. 2005;30(3):261-293. https://doi.org/10.3102/10769986030003261  
 - Viechtbauer W. Conducting meta-analyses in R with the metafor package. J Stat Softw. 2010;36(3):1-48. https://doi.org/10.18637/jss.v036.i03  
 - Viechtbauer W. Metafor: Meta-analysis package for R [R package]. Version 4.2-0; 2023. https://cran.r-pro-ject.org/web/packages/metafor/metafor.pdf  
-- Vietchbauer, "W. (2023). Metafor: Meta-Analysis Package for R (Version 4.2-0) [R pakage]. https://cran.r-project.org/web/packages/metafor/metafor.pdf  
+- Viechtbauer, "W. (2023). Metafor: Meta-Analysis Package for R (Version 4.2-0) [R pakage]. https://cran.r-project.org/web/packages/metafor/metafor.pdf  
