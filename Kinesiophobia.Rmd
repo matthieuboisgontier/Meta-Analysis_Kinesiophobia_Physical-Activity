@@ -170,13 +170,28 @@ dev.off()
 ```{r funnel plot for main analysis, fig.height=6, fig.width=8}
 # Produce funnel plot
 funnel.meta(m.cor,
-            xlim = c(-1.5, 1.5),
+            xlim = c(-1.5, 0.5),
             ylim = c(0.31, 0.0),
             studlab = TRUE,
             cex = 1,
             cex.studlab = 0.6, 
             pos.studlab = 1, 
             offset = 0.5)
+```
+
+```{r Save funnel plot}
+png(file = "Funnel Plot.png", width = 2100, height = 1500, res = 300)
+
+funnel.meta(m.cor,
+            xlim = c(-1.5, 0.5),
+            ylim = c(0.31, 0.0),
+            studlab = TRUE,
+            cex = 1,
+            cex.studlab = 0.6, 
+            pos.studlab = 1, 
+            offset = 0.5)
+
+dev.off()
 ```
 
 ```{r Egger test for main analysis}
