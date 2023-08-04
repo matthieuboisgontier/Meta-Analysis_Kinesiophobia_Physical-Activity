@@ -12,9 +12,13 @@ output:
 
 # R Markdown file set-up
 
-```{r setup and import data file, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-Kinphob_r <- read.csv("2023-08-02_meta_analysis_kinesiophobia_r.csv", header = TRUE, sep = ",")
+```
+
+```{r import data file, include=FALSE}
+Kinphob_r <- read.csv("2023-08-02_meta_analysis_kinesiophobia_r.csv", 
+                      header = TRUE, sep = ",")
 ```
 
 ```{r install and load dmetar, include=FALSE}
@@ -49,7 +53,7 @@ library(dmetar)
 #Install metasens package if needed for meta-analysis
 if(!require(metasens)){install.packages('metasens')}
 #Load metfor package
-library(metasens) #Ian, it seems the limitmeta() function requires this package
+library(metasens)
 ```
 
 # Data file glimpse (not included in PDF)
@@ -68,7 +72,7 @@ We conducted subgroup analyses to examine the differences in correlations betwee
 
 All analyses were performed in RStudio integrated development environment (IDE) (2023.06.1+524, “Mountain Hydrangea” release) for R software environment (R Core Team, 2023) using the ‘meta’ (Schwarzer, 2023), ‘metasens’ (Schwarzer et al., 2023), and ‘metafor’ (Vietchbauer, 2010, 2023) R packages.
 
-# Meta-analysis
+# Meta-analysis: primary analysis
 
 ```{r meta-analysis RE REML and Knapp-Hartung adjustment}
 m.cor <- metacor(cor = cor, 
@@ -100,7 +104,8 @@ forest.meta(m.cor,
 ```
 
 ```{r Save Forest plot main analysis}
-png(file = "Main analysis forestplot.png", width = 2800, height = 3800, res = 300)
+png(file = "Main analysis forestplot.png", 
+    width = 2800, height = 3800, res = 300)
 
 forest.meta(m.cor, 
             layout = "Revman5",
@@ -116,18 +121,20 @@ dev.off()
 ```
 
 
-## Secondary annalysis based on Spearman's rho values
+# Secondary analysis based on Spearman's rho values
 
-```{r}
-Kinphob_rho <- data.frame(author <- c("Carvalho, 2017", "Yuksel Karsli, 2019a", "Yuksel Karsli, 2019b", "Ohlman, 2018", "Verbunt, 2005"),
-      cor <- c("-0.15", "-0.158", "0.013", "-0.29", "0.06"),
-      n <- c("119", "34", "33", "52", "123")
-      )
+```{r Dataframe for secondary meta-analysis based on rho values}
+Kinphob_rho <- data.frame(author <- c("Carvalho, 2017", "Yuksel Karsli, 2019a", 
+                                      "Yuksel Karsli, 2019b", "Ohlman, 2018", 
+                                      "Verbunt, 2005"),
+                          cor <- c("-0.15", "-0.158", "0.013", "-0.29", "0.06"),
+                          n <- c("119", "34", "33", "52", "123"))
+
 Kinphob_rho$cor <- as.numeric(Kinphob_rho$cor)
 Kinphob_rho$n <- as.numeric(Kinphob_rho$n)
 ```
 
-```{r}
+```{r Secondary meta-analysis based on rho values}
 m.cor.rho <- metacor(cor = cor, 
                  n = n,
                  studlab = author,
@@ -143,7 +150,7 @@ summary(m.cor.rho)
 Results of the secondary meta-analysis based on Spearman rho values (k = 5, n = 361) showed no statistical evidence of an association between kinesiophobia and accelerometer-based measures of physical activity (r = -0.10; 95% CI: -0.27 to 0.09; I2 = 30.2%; p = 0.217).  
 
 
-```{r}
+```{r Secondary analysis forest plot based}
 forest.meta(m.cor.rho, 
             layout = "Revman5",
             sortvar = -TE,
@@ -156,7 +163,8 @@ forest.meta(m.cor.rho,
 ```
 
 ```{r Save Forest plot rho analysis}
-png(file = "Rho analysis forestplot.png", width = 2100, height = 1000, res = 300)
+png(file = "Rho analysis forestplot.png", 
+    width = 2100, height = 1000, res = 300)
 
 forest.meta(m.cor.rho, 
             layout = "Revman5",
@@ -170,62 +178,6 @@ forest.meta(m.cor.rho,
 
 dev.off()
 ```
-
-
-## Publication bias analysis
-
-### Funnel plot for small-study effects
-
-```{r funnel plot for main analysis, fig.height=6, fig.width=8}
-# Produce funnel plot
-funnel.meta(m.cor,
-            xlim = c(-1.5, 0.5),
-            ylim = c(0.31, 0.0),
-            studlab = TRUE,
-            cex = 1,
-            cex.studlab = 0.6, 
-            pos.studlab = 1, 
-            offset = 0.5)
-```
-
-```{r Save funnel plot}
-png(file = "Funnel Plot.png", width = 2100, height = 1500, res = 300)
-
-funnel.meta(m.cor,
-            xlim = c(-1.5, 0.5),
-            ylim = c(0.31, 0.0),
-            studlab = TRUE,
-            cex = 1,
-            cex.studlab = 0.6, 
-            pos.studlab = 1, 
-            offset = 0.5)
-
-dev.off()
-```
-
-```{r Egger test for main analysis}
-metabias(m.cor, method.bias = "linreg")
-eggers.test(m.cor)
-```
-
-Egger’s regression test showed that the data in the funnel plot was asymmetric (b = -2.85, 95% CI: -5.55 to -0.14, p = 0.046), which may be explained by publication bias, but also by other potential causes, such as different study procedures and between-study heterogeneity, which was considerable here. 
-
-
-###  Limit meta-analysis 
-```{r Rücker Limit Meta-Analysis Method}
-limitmeta(m.cor)
-```
-
-The bias-corrected estimate of the true effect size, calculated using Rücker’s limit meta-analysis method, showed that the correlation would remain significant if there was publication bias (r = -0.18; 95% CI: -0.34 to -0.01; p = 0.0378). 
-
-
-### Pcurve analysis
-
-```{r pcurve for main analysis}
-pcurve(m.cor, effect.estimation = FALSE, N, dmin = 0, dmax = 1)
-```
-
-A total of 41 studies were provided to the p-curve analysis, including 21 (51.2%) studies with p < 0.05 and 18 studies (43.9%) with p < 0.025. The p-value of the right-skewness test was < 0.001 for both the half and full curve, suggesting that evidential value was present.
 
 
 # Meta-analysis: subgroup analyses
@@ -255,7 +207,8 @@ forest.meta(Health_subg,
 ```
 
 ```{r Save Health condition forestplot}
-png(file = "Health condition forestplot.png", width = 2800, height = 5600, res = 300)
+png(file = "Health condition forestplot.png", 
+    width = 2800, height = 5600, res = 300)
 
 forest.meta(Health_subg, 
             layout = "Revman5", 
@@ -296,7 +249,8 @@ forest.meta(PAobj_subg,
 ```
 
 ```{r Save PA objectivity forestplot}
-png(file = "PA objectivity forestplot.png", width = 2800, height = 4500, res = 300)
+png(file = "PA objectivity forestplot.png", 
+    width = 2800, height = 4500, res = 300)
 
 forest.meta(PAobj_subg, 
             layout = "Revman5", 
@@ -335,7 +289,8 @@ forest.meta(PAmeas_subg,
             addrows.below.overall = 2)
 ```
 ```{r Save PA measure forestplot}
-png(file = "Physical activity measure forestplot.png", width = 2800, height = 5600, res = 300)
+png(file = "Physical activity measure forestplot.png", 
+    width = 2800, height = 5600, res = 300)
 
 forest.meta(PAmeas_subg, 
             layout = "Revman5", 
@@ -375,7 +330,8 @@ forest.meta(PAout_subg,
 ```
 
 ```{r Save PA outcome forestplot}
-png(file = "PA outcome forestplot.png", width = 2800, height = 5600, res = 300)
+png(file = "PA outcome forestplot.png", 
+    width = 2800, height = 5600, res = 300)
 
 forest.meta(PAout_subg, 
             layout = "Revman5", 
@@ -415,7 +371,8 @@ forest.meta(Kines_subg,
 ```
 
 ```{r Save Kinesiophobia measure forestplot}
-png(file = "Kinesiophobia measure forestplot.png", width = 2800, height = 4700, res = 300)
+png(file = "Kinesiophobia measure forestplot.png", 
+    width = 2800, height = 4700, res = 300)
 
 forest.meta(Kines_subg, 
             layout = "Revman5", 
@@ -499,6 +456,131 @@ bubble(m.cor.reg.pain,
        offset = 0.5, 
        col.line = 'red')
 ```
+
+# Sensitivity analysis: meta-regression by axis score
+
+```{r Meta-regression by axis score}
+m.cor.reg.axis <- metareg(m.cor, ~Axis_score)
+m.cor.reg.axis
+```
+
+A study's axis score (k = 41) did not influence correlation values. The R2 revealed that these variables explained less than 0.00% of the differences between study correlations. However, it should be noted that there was very littel variation in axis scores with all scores ranging between 16 and 18.
+
+```{r Bubble plot for meta-regression by axis score, fig.height=6, fig.width=8}
+bubble(m.cor.reg.axis, 
+       xlim = c(10, 20), 
+       ylim = c(-1.5, 0.5), 
+       xlab = 'axis score',
+       studlab = TRUE, 
+       font.lab = 2,
+       cex = 1.5, 
+       cex.studlab = 0.6, 
+       pos.studlab = 1, 
+       offset = 0.5, 
+       col.line = 'red')
+```
+
+# Publication bias analysis
+
+## Small-study effects
+
+### Funnel plot 
+
+```{r Contour-enhanced funnel plot for main analysis with labels, fig.height=6, fig.width=8}
+# Define fill colors for contour
+col.contour = c("gray75", "gray85", "gray95")
+
+# Funnel plot
+funnel.meta(m.cor, xlim = c(-1.5, 1),
+            contour = c(0.9, 0.95, 0.99),
+            col.contour = col.contour,
+            studlab = TRUE,
+            cex = 1,
+            cex.studlab = 0.5, 
+            pos.studlab = 4, 
+            offset = 0.5)
+
+# legend
+legend(x =0.5, y = 0.01, 
+       legend = c("p < 0.1", "p < 0.05", "p < 0.01"),
+       fill = col.contour)
+
+# title
+title("Contour-Enhanced Funnel Plot (Kinesiophobia and Physical Activity)")
+```
+
+```{r Contour-enhanced funnel plot for main analysis no labels, fig.height=6, fig.width=8}
+# Define fill colors for contour
+col.contour = c("gray75", "gray85", "gray95")
+
+# Funnel plot
+funnel.meta(m.cor, xlim = c(-1.5, 1),
+            contour = c(0.9, 0.95, 0.99),
+            col.contour = col.contour)
+
+# legend
+legend(x =0.5, y = 0.01, 
+       legend = c("p < 0.1", "p < 0.05", "p < 0.01"),
+       fill = col.contour)
+
+# title
+title("Contour-Enhanced Funnel Plot (Kinesiophobia and Physical Activity)")
+```
+
+
+```{r funnel plot for main analysis, fig.height=6, fig.width=8}
+# Produce funnel plot
+funnel.meta(m.cor,
+            xlim = c(-1.5, 0.5),
+            ylim = c(0.3, 0.0),
+            studlab = TRUE,
+            cex = 1.5,
+            cex.studlab = 0.7, 
+            pos.studlab = 1, 
+            offset = 0.5)
+```
+
+```{r Save funnel plot}
+png(file = "Funnel Plot.png", width = 2100, height = 1500, res = 300)
+
+funnel.meta(m.cor,
+            xlim = c(-1.5, 0.5),
+            ylim = c(0.31, 0.0),
+            studlab = TRUE,
+            cex = 1,
+            cex.studlab = 0.6, 
+            pos.studlab = 1, 
+            offset = 0.5)
+
+dev.off()
+```
+
+### Egger's test
+
+```{r Eggers test for main analysis}
+metabias(m.cor, method.bias = "linreg")
+eggers.test(m.cor)
+```
+
+Egger’s regression test showed that the data in the funnel plot was asymmetric (b = -2.85, 95% CI: -5.55 to -0.14, p = 0.046), which may be explained by publication bias, but also by other potential causes, such as different study procedures and between-study heterogeneity, which was considerable here. 
+
+
+###  Limit meta-analysis 
+```{r Rücker Limit Meta-Analysis Method}
+limitmeta(m.cor)
+```
+
+The bias-corrected estimate of the true effect size, calculated using Rücker’s limit meta-analysis method, showed that the correlation would remain significant if there was publication bias (r = -0.18; 95% CI: -0.34 to -0.01; p = 0.0378). 
+
+
+## Pcurve analysis
+
+```{r pcurve for main analysis}
+pcurve(m.cor, effect.estimation = FALSE, N, dmin = 0, dmax = 1)
+```
+
+A total of 41 studies were provided to the p-curve analysis, including 21 (51.2%) studies with p < 0.05 and 18 studies (43.9%) with p < 0.025. The p-value of the right-skewness test was < 0.001 for both the half and full curve, suggesting that evidential value was present.
+
 
 # References
 
