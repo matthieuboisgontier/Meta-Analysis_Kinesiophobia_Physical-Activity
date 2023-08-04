@@ -49,7 +49,7 @@ library(dmetar)
 #Install metasens package if needed for meta-analysis
 if(!require(metasens)){install.packages('metasens')}
 #Load metfor package
-library(metasens) #Ian, the limitmeta() didn't work without this package
+library(metasens) #Ian, it seems the limitmeta() function requires this package
 ```
 
 # Data file glimpse (not included in PDF)
@@ -203,7 +203,7 @@ eggers.test(m.cor)
 limitmeta(m.cor)
 ```
 
-### Pcurve analysis 
+### Pcurve analysis #Ian, could you please add a csv output of the p-curve figure?
 
 ```{r pcurve for main analysis}
 pcurve(m.cor, effect.estimation = FALSE, N, dmin = 0, dmax = 1)
