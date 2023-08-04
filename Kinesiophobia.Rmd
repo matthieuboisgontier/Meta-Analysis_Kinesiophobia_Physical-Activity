@@ -464,7 +464,7 @@ m.cor.reg.axis <- metareg(m.cor, ~Axis_score)
 m.cor.reg.axis
 ```
 
-A study's axis score (k = 41) did not influence correlation values. The R2 revealed that these variables explained less than 0.00% of the differences between study correlations. However, it should be noted that there was very littel variation in axis scores with all scores ranging between 16 and 18.
+A study's axis score (k = 41) did not influence correlation values. The R2 revealed that these variables explained less than 0.00% of the differences between study correlations. However, it should be noted that there was very little variation in axis scores with all scores ranging between 16 and 18.
 
 ```{r Bubble plot for meta-regression by axis score, fig.height=6, fig.width=8}
 bubble(m.cor.reg.axis, 
