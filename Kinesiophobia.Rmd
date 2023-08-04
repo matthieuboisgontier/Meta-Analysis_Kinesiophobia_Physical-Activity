@@ -49,9 +49,8 @@ library(dmetar)
 #Install metasens package if needed for meta-analysis
 if(!require(metasens)){install.packages('metasens')}
 #Load metfor package
-library(metasens)
+library(metasens) #Ian, the limitmeta() didn't work without this package
 ```
-
 
 # Data file glimpse (not included in PDF)
 
