@@ -146,6 +146,23 @@ forest.meta(m.cor.rho,
             addrows.below.overall = 2)
 ```
 
+```{r Save Forest plot rho analysis}
+png(file = "Rho analysis forestplot.png", width = 2100, height = 1000, res = 300)
+
+forest.meta(m.cor.rho, 
+            layout = "Revman5",
+            sortvar = -TE,
+            prediction = TRUE, 
+            print.tau2 = FALSE,
+            leftlabs = c("Author", "n"),
+            xlim=c(-1.0,1.0),
+            fs.hetstat = 10,
+            addrows.below.overall = 2)
+
+dev.off()
+```
+
+
 ## Publication bias analysis
 
 ### Funnel plot for small-study effects
