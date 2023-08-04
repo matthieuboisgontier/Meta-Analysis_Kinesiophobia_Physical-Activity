@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r import data file, include=FALSE}
-Kinphob_r <- read.csv("2023-08-02_meta_analysis_kinesiophobia_r.csv", 
+Kinphob_r <- read.csv("2023-08-04_meta_analysis_kinesiophobia_r.csv", 
                       header = TRUE, sep = ",")
 ```
 
