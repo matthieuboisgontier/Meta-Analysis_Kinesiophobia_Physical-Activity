@@ -85,7 +85,7 @@ All analyses were performed in RStudio integrated development environment (IDE) 
 # Import Pearson r data
 
 ```{r import data file, include=FALSE}
-Kinphob_r <- read.csv("meta_analysis_kinesiophobia_r_update5.csv", 
+Kinphob_r <- read.csv("2024-05-02_meta_analysis_kinesiophobia_r.csv", 
                       header = TRUE, sep = ",")
 ```
 
