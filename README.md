@@ -12,4 +12,4 @@ The 'Information_from_corresponding_authors.xls' file reports the estimates or d
 The 'Unanswered emails.docx' file reports the references of articles for which we did not receive a response to our emailed data request.
 
 ## Quality scores
-Corresponding 
+The 'Quality and bias assessment.xlsx' file include the quality score computed by the reviewers.
