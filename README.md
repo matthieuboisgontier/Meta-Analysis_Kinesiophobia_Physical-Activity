@@ -4,7 +4,7 @@
 This repository contains an `Rmd` script "Kinesiophobia.Rmd" to conduct the meta-analysis examining the relationship between kinesiophobia and physical activity as well as subgroup meta-analyses and the meta-regressions. 
 
 ## Ad-hoc R scripts
-When Pearson’s correlation estimate (r) was not reported in an article, but the exact p-value and sample size (n) were available and it was possible to know the sign of the correlation based on the information provided in the article, the r value was computed using the '
+When Pearson’s correlation estimate (r) was not reported in an article, but the exact p-value and sample size (n) were available and it was possible to know the sign of the correlation based on the information provided in the article, the r value was computed using the 'Pearson r calculation.R' script.
 When exact p-values were not reported in an article, but the sample size (n) and Pearson’s correlation coefficient were available, the exact p-value was computed using the 'exact-p calculation.R' script.
 
 ## Data for analyses in Rmd
