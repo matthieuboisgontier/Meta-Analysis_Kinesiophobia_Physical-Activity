@@ -1,0 +1,84 @@
+author,cluster,cor,z,var.z,n,Health_status,PA_objectivity,Kinesiophobia_measure,PA_measure,PA_outcome,Age,Prop_women,Pain,p-value,cor_id,quality
+"Alamam, 2019",sample_1,-0.17,-0.171666664,0.010309278,100,Chronic pain,Self-reported measure,FABQ,IPAQ,MET-min/week ,40,0.62,48,0.116,id_1,7
+"Alschuler, 2011",sample_2,-0.48,-0.522984278,0.058823529,20,Chronic pain,Device-based measure,TSK_17,Accelerometer,Counts/min,49.1,0.45,48.7,0.03,id_2,6
+"Altug, 2016",sample_3,-0.096,-0.096296554,0.009174312,112,Chronic pain,Self-reported measure,TSK_17,IPAQ,MET-min/week ,45,0.65,34.5,0.03,id_3,8
+"Alzahrani, 2021",sample_4,0.22,0.223656109,0.043478261,26,Chronic pain,Device-based measure,TSK_17,Accelerometer,MET-min/week ,43.6,0.42,43,,id_4,8.8
+"Alzahrani, 2021",sample_4,-0.05,-0.050041729,0.043478261,26,Chronic pain,Device-based measure,TSK_17,Accelerometer,MET-min/week ,43.6,0.42,43,,id_5,8.8
+"Alzahrani, 2021",sample_4,-0.21,-0.213171347,0.043478261,26,Chronic pain,Device-based measure,TSK_17,Accelerometer,Steps/day,43.6,0.42,43,,id_6,8.8
+"Assadourian, 2020",sample_5,-0.022,-0.02200355,0.008333333,123,Chronic pain,Self-reported measure,TSK_17,Diary,Active time,49,0.6,67,0.313,id_7,8
+"Aydemir, 2022",sample_6,-0.773,-1.027739144,0.029411765,37,Arthritis,Self-reported measure,TSK_17,UCLA,Score,58.8,0.68,52,0.813,id_8,7
+"Aykut Selcuk, 2020",sample_7,-0.247,-0.252215359,0.015625,67,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,60.6,1,46,<0.001,id_9,7
+"Aykut Selcuk, 2020",sample_7,-0.309,-0.319439471,0.038461538,29,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,61.6,0,29,<0.05,id_10,7
+"Baday-Keskin, 2022",sample_8,-0.12,-0.120581028,0.011764706,88,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,52,0.76,48,<0.05,id_11,7
+"Baez, 2020",sample_9,0.181,0.183016366,0.027027027,40,Surgery,Device-based measure,TSK_11,Pedometer,Steps/day,24.3,0.63,81.5,,id_12,8
+"Bahar Ozdemir, 2021",sample_10,-0.007,-0.007000114,0.010204082,101,Young adults,Self-reported measure,TSK_17,IPAQ,MET-min/week ,33.9,0.58,30.7,,id_13,8
+"Baykal Sahin, 2021",sample_11,-0.315,-0.326086553,0.010526316,98,Cardiovascular condition,Self-reported measure,TSK_17,IPAQ,MET-min/week ,58.1,0.36,60.1,,id_14,8
+"Bernard, 2015",sample_12,-0.05,-0.050041729,0.008474576,121,Older adults,Self-reported measure,TSK_17,Questionnaire,Score,65.5,1,,,id_15,8.8
+"Carvalho, 2017",sample_13,-0.18,-0.181982689,0.00862069,119,Chronic pain,Self-reported measure,TSK_17,BHPAQ,Score,39.1,0.69,67,,id_16,9
+"Carvalho, 2017",sample_13,0.09,0.090244188,0.00862069,119,Chronic pain,Device-based measure,TSK_17,Accelerometer,Active time,39.1,0.69,67,,id_17,9
+"Carvalho, 2017",sample_13,-0.02,-0.020002667,0.00862069,119,Chronic pain,Device-based measure,TSK_17,Accelerometer,Counts/min,39.1,0.69,67,,id_18,9
+"Coronado, 2021",sample_14,-0.05,-0.050041729,0.004081633,248,Surgery,Device-based measure,TSK_13,Accelerometer,Counts/min,62.2,0.51,31,,id_19,8
+"Corrigan, 2018",sample_15,-0.005,-0.005000042,0.02,53,Acute pain,Self-reported measure,TSK_17,SGPALS,Score,54.8,0.33,,0.96,id_20,8
+"Cromert, 2021",sample_16,-0.13,-0.13073985,0.007352941,139,Post-Partum Women,Device-based measure,TSK_17,Accelerometer,Counts/min,37,1,,>0.05,id_21,7
+"Dabek, 2020",sample_17,-0.428,-0.457445576,0.014492754,72,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,,id_22,8
+"Dabek, 2020",sample_17,-0.868,-1.324910848,0.066666667,18,Neurological condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,,id_23,8
+"Dabek, 2020",sample_17,-0.523,-0.580460431,0.007874016,130,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,,id_24,8
+"Dabek, 2020",sample_17,-0.41,-0.435611223,0.00862069,119,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,,id_25,8
+"Dabek, 2020",sample_17,-0.201,-0.203774438,0.041666667,27,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,,id_26,8
+"Dabek, 2020",sample_17,-0.563,-0.637214568,0.012048193,86,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,,id_27,8
+"Dabek, 2020",sample_17,-0.663,-0.798147774,0.083333333,15,Cardiovascular condition,Self-reported measure,TSK_Heart,IPAQ,MET-min/week ,,,,,id_28,8
+"Demirbuken, 2016",sample_18,-0.153,-0.154210913,0.010416667,99,Chronic pain,Self-reported measure,TSK_17,IPAQ,MET-min/week ,43.5,0.66,64.7,,id_29,8
+"Demmelmaier, 2018",sample_19,-0.07,-0.070114671,0.000389712,2569,Arthritis,Self-reported measure,FABQ,IPAQ,MET-min/week ,60,0.73,32,0.00009,id_30,9
+"Dogan, 2022",sample_20,-0.061,-0.06107583,0.003484321,290,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,59.86,0.61,52.3,0.299,id_31,8
+"Donnarumma, 2017",sample_21,-0.35,-0.365443754,0.020833333,51,Surgery,Self-reported measure,TSK_17,IPAQ,MET-min/week ,61.9,0.23,35,0.01,id_32,7
+"Elfving, 2007",sample_22,-0.31,-0.320545409,0.016393443,64,Chronic pain,Self-reported measure,TSK_13,SGPALS,Score,47,0.6,,0.01,id_33,9
+"Glaviano, 2017",sample_23,-0.481,-0.524284466,0.058823529,20,Chronic pain,Device-based measure,FABQ,Accelerometer,Steps/day,22.2,0.75,44,0.02,id_34,8
+"Helmus, 2012",sample_24,-0.05,-0.050041729,0.02,53,Chronic pain,Device-based measure,TSK_17,Accelerometer,Counts/min,39.9,0.7,58,,id_35,8
+"Ho-A-Tham, 2022",sample_25,-0.04,-0.040021354,0.004830918,210,Chronic pain,Self-reported measure,FABQ,GPAQ,MET-min/week ,48.7,1,,0.49,id_36,8
+"Igelstrom, 2013",sample_26,-0.251,-0.256479763,0.014285714,73,Obstructive Sleep Apnea,Device-based measure,TSK_17,Accelerometer,Steps/day,55,0.21,,0.49,id_37,8
+"Igelstrom, 2013",sample_26,-0.11,-0.110446916,0.014285714,73,Obstructive Sleep Apnea,Device-based measure,TSK_17,Accelerometer,Active time,55,-0.21,,0.37,id_38,8
+"Kilinc, 2019",sample_27,-0.693,-0.853704817,0.005076142,200,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,53.2,0.6,50.2,,id_39,8
+"Koho, 2011",sample_28,0.1,0.100335348,0.011111111,93,Chronic pain,Self-reported measure,TSK_17,MLTPAQ,Score,44,0.65,64.4,,id_40,7
+"Koppenaal, 2023",sample_29,-0.06,-0.060072156,0.004975124,204,Chronic pain,Device-based measure,FABQ,Accelerometer,MET-min/week ,47.7,51,53,0.39,id_41,9.2
+"Koppenaal, 2023",sample_29,-0.03,-0.030009005,0.004975124,204,Chronic pain,Device-based measure,FABQ,Accelerometer,MET-min/week ,47.7,51,53,0.69,id_42,9.2
+"Lotzke, 2018",sample_30,-0.19,-0.192337169,0.008695652,118,Chronic pain,Device-based measure,TSK_17,Accelerometer,Steps/day,46,0.53,61,0.03,id_43,9
+"Luthi, 2022",sample_31,0.06,0.060072156,0.002325581,433,Chronic pain,Self-reported measure,TSK_17,BHPAQ,Score,,0.18,44.5,,id_44,8
+"Marques-Sule, 2022",sample_32,-0.32,-0.331647109,0.00877193,117,Cardiovascular condition,Self-reported measure,TSK_11,IPAQ,MET-min/week ,56,0.44,,,id_45,9
+"Marshall, 2017",sample_33,-0.24,-0.244774113,0.004651163,218,Chronic pain,Self-reported measure,FABQ,Questionnaire,Active time,36.2,,36,,id_46,8
+"Marshall, 2021",sample_34,-0.28,-0.287682072,0.001980198,508,Chronic pain,Self-reported measure,FABQ,Questionnaire,Active time,38.2,,45,,id_47,8
+"Marshall, 2022",sample_35,-0.01,-0.010000333,0.002564103,393,Chronic pain,Self-reported measure,FABQ,Questionnaire,Active time,39.2,,43,,id_48,7
+"Masse-Alarie, 2016",sample_36,0.09,0.090244188,0.052631579,22,Chronic pain,Self-reported measure,TSK_17,GPAQ,MET-min/week ,,0.36,,,id_49,7.8
+"Miller, 2018",sample_37,-0.54,-0.604155603,0.020408163,52,Older adults,Device-based measure,TSK_17,Accelerometer,Steps/day,67.4,0.62,28,,id_50,7
+"Minetama, 2022",sample_38,-0.229,-0.233133868,0.014705882,71,Chronic pain,Device-based measure,TSK_11,Pedometer,Steps/day,71.6,0.51,62,,id_51,7
+"Navarro-Ledesma, 2022",sample_39,-0.059,-0.059068603,0.026315789,41,Chronic pain,Self-reported measure,TSK_11,GLTEQ,Score,52.6,1,,,id_52,7
+"Norte, 2019",sample_40,-0.312,-0.322759566,0.013513514,77,Surgery,Self-reported measure,TSK_17,GLTEQ,Score,21.6,0.45,91.4,,id_53,7
+"Ozer, 2022",sample_41,-0.889,-1.417136333,0.016949153,62,Pulmonary condition,Self-reported measure,TSK_17,IPAQ,MET-min/week ,36.8,0.48,,,id_54,8
+"Ozlu, 2022",sample_42,0.15,0.151140436,0.023809524,45,Arthritis,Self-reported measure,TSK_17,IPAQ,MET-min/week ,54.22,1,24,0.32,id_55,7.3
+"Palstam, 2014",sample_43,0.03,0.030009005,0.014285714,73,Fibromyalgia,Self-reported measure,FABQ,LTPAI,Score,50.4,1,58.07,,id_56,7
+"Palstam, 2014",sample_43,-0.14,-0.140925576,0.014285714,73,Fibromyalgia,Self-reported measure,FABQ,LTPAI,Score,50.4,1,58.07,,id_57,7
+"Pastor-Mira, 2020",sample_44,0.01,0.010000333,0.003690037,274,Chronic pain,Device-based measure,TSK_11,Pedometer,Steps/day,51.8,1,65.1,,id_58,8
+"Pedler, 2018",sample_45,0.14,0.140925576,0.01,103,Chronic pain,Device-based measure,TSK_11,Accelerometer,Active time,39.7,0.72,40,,id_59,7
+"Peres, 2023",sample_46,-0.25,-0.255412812,0.021276596,50,Arthritis,Self-reported measure,TSK_17,SQUASH,MET-min/week ,62.8,0.76,,0.055,id_60,8
+"Peres, 2023",sample_46,0.17,0.171666664,0.021276596,50,Arthritis,Self-reported measure,TSK_17,SQUASH,MET-min/week ,46.8,0.62,,0.188,id_61,8
+"Polaski, 2021",sample_47,-0.03,-0.030009005,0.028571429,38,Chronic pain,Device-based measure,FABQ,Accelerometer,Steps/day,37.6,0.68,31,0.4214,id_62,8.4
+"Priore, 2020",sample_48,-0.25,-0.255412812,0.021276596,50,Acute pain,Self-reported measure,TSK_17,IPAQ,MET-min/week ,22.4,0.74,,,id_63,9.2
+"Rabey, 2017",sample_49,0.07,0.070114671,0.003802281,266,Chronic pain,Self-reported measure,FABQ,IPAQ,MET-min/week ,51,0.59,58,,id_64,8
+"Roaldsen, 2009",sample_50,-0.39,-0.411800034,0.010526316,98,Cardiovascular condition,Self-reported measure,FABQ,SGPALS,Score,76,0.63,26.5,,id_65,8
+"Sandal, 2021",sample_51,-0.024,-0.02400461,0.002188184,460,Chronic pain,Self-reported measure,FABQ,SGPALS,Score,45.7,0.55,49,,id_66,8.8
+"Saulicz, 2016",sample_52,-0.57,-0.647522845,0.009803922,105,Older adults,Self-reported measure,KCS,BHPAQ,Score,,1,,,id_67,7
+"Sertel, 2021",sample_53,-0.021,-0.021003088,0.00625,163,Chronic pain,Self-reported measure,TSK_17,PASE,Score,71.4,0.47,,,id_68,7
+"Smulligan, 2023",sample_54,-0.18,-0.181982689,0.05,23,Neurological condition,Device-based measure,TSK_17,Accelerometer,Steps/day,14.9,0.48,,0.67,id_69,8
+"Smulligan, 2023",sample_54,-0.34,-0.354092529,0.05,23,Neurological condition,Device-based measure,TSK_17,Accelerometer,Steps/day,14.9,0.48,,0.65,id_70,8
+"Smulligan, 2023",sample_54,-0.6,-0.693147181,0.066666667,18,Neurological condition,Device-based measure,TSK_17,Accelerometer,Active time,14.5,0.6,,0.008,id_71,8
+"Smulligan, 2023",sample_54,-0.63,-0.741416144,0.066666667,18,Neurological condition,Device-based measure,TSK_17,Accelerometer,Active time,14.5,0.5,,0.05,id_72,8
+"Spaderna, 2020",sample_55,-0.28,-0.287682072,0.017241379,61,Cardiovascular condition,Device-based measure,FActS,Accelerometer,Kcal/day,67.5,0.21,,,id_73,9
+"Strandberg, 2022",sample_56,-0.084,-0.084198409,0.002232143,451,Cancer,Self-reported measure,TSK_14,Accelerometer,Active time,,,,,id_74,8.8
+"Sutcu, 2021",sample_57,-0.32,-0.331647109,0.058823529,20,Neurological condition,Device-based measure,TSK_17,Accelerometer,Steps/day,69.8,0.5,,0.15,id_75,6
+"Sutcu, 2021",sample_57,-0.54,-0.604155603,0.058823529,20,Neurological condition,Device-based measure,TSK_17,Accelerometer,Kcal/day,69.8,0.5,,0.013,id_76,6
+"Suttmiller, 2022",sample_58,0.219,0.22260549,0.008130081,126,Chronic pain,Self-reported measure,TSK_11,JPAS,MET-min/week ,32.69,0.85,,0.014,id_77,8
+"Uritani, 2020",sample_59,-0.163,-0.164467041,0.006097561,167,Arthritis,Device-based measure,BFOMSO,Accelerometer,Steps/day,62.2,0.63,57,,id_78,7
+"Wang , 2023",sample_60,-0.35,-0.365443754,0.004545455,223,Pulmonary condition,Self-reported measure,BBQ,IPAQ,MET-min/week ,72.35,0.17,,<0.001,id_79,7
+"Wasiuk-Zowada, 2022",sample_61,-0.363,-0.380336888,0.012987013,80,Neurological condition,Self-reported measure,TSK_17,BHPAQ,Score,45.5,0.75,35,,id_80,7
+"Zadro, 2019",sample_62,-0.18,-0.181982689,0.01754386,60,Chronic pain,Self-reported measure,TSK_12,RAPAQ,Active time,68.3,0.52,50,,id_81,3.2
+"Zadro, 2019",sample_62,-0.12,-0.120581028,0.01754386,60,Chronic pain,Self-reported measure,TSK_13,RAPAQ,Active time,68.3,0.52,50,,id_82,3.2
+"Zelle, 2016",sample_63,-0.22,-0.223656109,0.002066116,487,Surgery,Self-reported measure,TSK_11,MLTPAQ,MET-min/week ,51.6,0.43,,,id_83,7

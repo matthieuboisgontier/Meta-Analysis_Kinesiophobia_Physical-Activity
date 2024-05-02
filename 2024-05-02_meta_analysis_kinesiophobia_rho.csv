@@ -1,0 +1,22 @@
+author,cluster,rho,z,var.z,n,Health_status,PA_objectivity,Kinesiophobia_measure,PA_measure,PA_outcome,Age,Prop_women,Pain,p-value,Axis_score,QuAT_score,cor_id
+Atici,sample_1,-0.345,-0.359757028,0.003984064,254,Older adults,Self-reported measure,KCS,PASE,Score,,0.67,,<0.001,16,9,id_1
+"Barchek, 2021",sample_2,0.12,0.120581028,0.0625,19,Surgery,Device-based measure,FABQ,Accelerometer,Steps/day,22.9,0.68,,0.63,17,7,id_2
+"Barchek, 2021",sample_2,-0.13,-0.13073985,0.0625,19,Surgery,Device-based measure,FABQ,Accelerometer,Counts/min,22.9,0.68,,0.59,17,7,id_3
+"Carvalho, 2017",sample_3,-0.15,-0.151140436,0.00862069,119,Chronic pain,Device-based measure,TSK_17,Accelerometer,Steps/day,39.1,0.69,6.7,,17,9,id_4
+"Carvalho, 2017",sample_3,-0.13,-0.13073985,0.00862069,119,Chronic pain,Device-based measure,TSK_17,Accelerometer,Active time,39.1,0.69,6.7,,17,9,id_5
+"Gonzalez de La Flor, 2022",sample_4,0.204,0.20690272,0.025641026,42,Chronic pain,Self-reported measure,TSK_11,IPAQ,MET-min/week ,36.7,0.76,7.14,0.2,17,8,id_6
+"Knapik, 2019",sample_5,-0.8,-1.098612289,0.007575758,135,Cardiovascular condition,Self-reported measure,TSK_Heart,PAQE,Score,71.9,0.44,,,17,8,id_7
+"Leonhardt, 2009",sample_6,-0.093,-0.093269519,0.002242152,449,Acute pain,Self-reported measure,FABQ,FQPA,MET-min/week ,45.4,0.5,4.9,<0.05,17,7,id_8
+"Leonhardt, 2009",sample_6,-0.095,-0.095287349,0.002985075,338,Chronic pain,Self-reported measure,FABQ,FQPA,MET-min/week ,50.4,0.38,4.9,>0.05,17,7,id_9
+"Ohlman, 2018",sample_7,-0.29,-0.298566264,0.020408163,52,Older adults,Device-based measure,TSK_11,Accelerometer,Active time,67.4,0.63,,,16,8,id_10
+"Olsson, 2014",sample_8,-0.27,-0.276863823,0.012820513,81,Chronic pain,Self-reported measure,TSK_17,SGPALS,Score,40,0.14,,0.013,18,8,id_11
+"Pazzinato, 2022",sample_9,-0.14,-0.140925576,0.011235955,92,Chronic pain,Self-reported measure,TSK_17,BHPAQ,Score,,1,5.1,0.18,17,8,id_12
+"Smulligan, 2023",sample_10,0.1,0.100335348,0.05,23,Neurological condition,Device-based measure,TSK_17,Accelerometer,Active time,14.9,0.48,,0.41,17,8,id_13
+"Smulligan, 2023",sample_10,-0.12,-0.120581028,0.066666667,18,Neurological condition,Device-based measure,TSK_17,Accelerometer,Active time,14.5,0.5,,0.65,17,8,id_14
+"Verbunt, 2005",sample_11,0.06,0.060072156,0.008333333,123,Chronic pain,Device-based measure,TSK_17,Accelerometer,Counts/day,44.1,0.46,4.2,,16,7,id_15
+"Yuksel Karsli, 2019",sample_12,-0.39,-0.411800034,0.032258065,34,Arthritis,Device-based measure,TSK_17,Accelerometer,Active time,41,0.35,,0.02,16,8,id_16
+"Yuksel Karsli, 2019",sample_12,-0.158,-0.159334822,0.032258065,34,Arthritis,Device-based measure,TSK_17,Accelerometer,Active time,41,0.35,,0.373,16,8,id_17
+"Yuksel Karsli, 2019",sample_12,-0.16,-0.161386696,0.032258065,34,Arthritis,Device-based measure,TSK_17,Accelerometer,Active time,41,0.35,,0.929,16,8,id_18
+"Yuksel Karsli, 2019",sample_12,-0.01,-0.010000333,0.033333333,33,Arthritis,Device-based measure,TSK_17,Accelerometer,Active time,33,0.3,,0.997,16,8,id_19
+"Yuksel Karsli, 2019",sample_12,0.013,0.013000732,0.033333333,33,Arthritis,Device-based measure,TSK_17,Accelerometer,Active time,33,0.3,,0.947,16,8,id_20
+"Yuksel Karsli, 2019",sample_12,-0.24,-0.244774113,0.033333333,33,Arthritis,Device-based measure,TSK_17,Accelerometer,Active time,33,0.3,,0.2,16,8,id_21
