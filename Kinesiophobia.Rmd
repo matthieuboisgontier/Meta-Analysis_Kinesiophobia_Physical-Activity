@@ -63,16 +63,19 @@ library(esc)
 
 
 # Meta-analysis method
+We pooled Pearson product-moment correlations from eligible studies to examine the relationship between kinesiophobia and physical activity. Correlations were pooled using the generic inverse pooling method via the ‘metacor’ function in the {meta} R package. This function automatically performs a necessary Fisher’s z-transformation on the original, untransformed correlations prior to pooling. The ‘metacor’ function also reconverts the pooled association back to its original form for ease of interpretation. Correlation estimates were nested within studies using the ‘cluster’ argument to account for the dependencies between these estimates, resulting in a three-level meta-analysis (level 1: participants, level 2: correlation estimates, level 3: studies). The distribution of variance across levels was assessed using the multilevel version of I2. The performance of the 2-level and 3-level meta-analyses was assessed and compared using the {metafor} R package.
 
+We anticipated considerable between-study heterogeneity, and therefore used a random-effects model to pool correlations. The restricted maximum likelihood (RML) estimator (Viechtbauer, 2005) was used to calculate the heterogeneity variance Tau2. In addition to Tau2, to quantify between-study heterogeneity, we report the I2 statistic, which provides the percentage of variability in the correlations that is not caused by sampling error56. The I2 statistic was interpreted as follows: 0-40%, may not be important; 30-60%, may represent moderate heterogeneity; 50-90%, may represent substantial heterogeneity; and 75-100%, may represent considerable heterogeneity. To reduce the risk of false positives, we used a Knapp-Hartung adjustment (Knapp and Hartung, 2003) to calculate the confidence interval around the pooled association. We also report the prediction interval, which provides a range within which we can expect the associations of future studies to fall based on the current evidence. The pooled correlation was interpreted using Cohen’s conventions (Cohen, 1988): r ≈ -0.10, small negative correlation; r ≈ -0.30, moderate negative correlation; r ≈ -0.50, large negative correlation.
 
+Publication bias was assessed using a funnel plot, which is a scatter plot of the studies’ effect size expressed as the Fisher’s z transformed correlation on the x-axis against a measure of their standard error (which is indicative of precision of the study’s effect size) on the y-axis. When there is no publication bias, the data points in a funnel plot should form a roughly symmetrical, upside-down funnel. Studies in the top part of the plot, which have lower standard errors, are expected to lie closely together, and not far away from the pooled effect size. In the lower part of the plot, studies have higher standard errors, the funnel “opens up”, and effect sizes are expected to scatter more heavily to the left and right of the pooled effect. Egger’s regression (Egger et al., 1997) can be used to formally test funnel plot’s asymmetry. However, since there is no direct function to conduct Egger's test for 3-level models, we calculated it by using the standard errors of the effect size estimates as a predictor in the meta-regression60.
 
-In our meta-analysis, we pooled Pearson product-moment correlations from eligible studies to examine the relationship between kinesiophobia and physical activity. Correlations were pooled using the generic inverse pooling method via the ‘metacor’ function in the ‘meta’ R package. This function automatically performs a necessary Fisher’s z-transformation on the original, untransformed correlations prior to pooling. The ‘metacor’ function also reconverts the pooled association back to its original form for ease of interpretation. Correlation estimates were nested within studies using the ‘cluster’ argument to take into account the depencies between these estimates, resulting in a three-level meta-analysis model (level 1: participants, level 2: correlation estimates, level 3: studies). Performance of the 2-level and 3-level meta-analyses was assessed and compared using the 'metafor' R package.
+P-curve analysis (Simonsohn et al., 2014) was conducted to assess whether the distribution of the statistically significant results was consistent with what would be expected if only true effects were present. When the null hypothesis is true (i.e., there is no true effect), p-values are assumed to follow a uniform distribution: highly significant effects (e.g., p = 0.01) are as likely as barely significant effects (e.g., p = 0.049). However, when the null hypothesis is false (i.e., there is a true effect in our data), p-values are assumed to follow a right-skewed distribution: highly significant effects are more likely than barely significant effects. A left-skewed distribution would suggest that some studies used statistical tests to find significant results in ways that may not be reproducible or generalizable (i.e., p-hacking).
 
-We anticipated considerable between-study heterogeneity, and therefore used a random-effects model to pool correlations. The restricted maximum likelihood (RML) estimator (Viechtbauer, 2005) was used to calculate the heterogeneity variance Tau2. In addition to Tau2, to quantify between-study heterogeneity, we also reported the I2 statistic, which provides the percentage of variability in the correlations that is not caused by sampling error (Higgins and Thompson, 2002). The I2 statistic was interpreted as follows: 0-40%, may not be important; 30-60%, may represent moderate heterogeneity; 50-90%, may represent substantial heterogeneity; and 75-100%, may represent considerable heterogeneity. To reduce the risk of false positives, we used a Knapp-Hartung adjustment (Knapp and Hartung, 2003) to calculate the confidence interval around the pooled association. We also report the prediction interval, which provides a range within which we can expect the associations of future studies to fall based on the current evidence. The pooled correlation was interpreted using Cohen’s conventions (Cohen, 1988): r ≈ -0.10, small negative correlation; r ≈ -0.30, moderate negative correlation; r ≈ -0.50, large negative correlation.
+A secondary meta-analysis was conducted using the same approach, but based on Spearman’s rho values, to further test the relationship between kinesiophobia and device-based physical activity.
 
-Egger’s regression test of funnel plot asymmetry (Egger et al., 1997) and a p-curve analysis (Simonsohn et al., 2014) were conducted to assess potential publication bias in our meta-analysis.
+Subgroup analyses were conducted to examine the differences in correlations between studies including participants with different health conditions and using different types of physical activity measures (i.e., device-based versus self-reported), physical activity measurement instruments (i.e., type of questionnaires, type of devices), physical activity outcomes, and kinesiophobia measures.
 
-A secondary meta-analysis was conducted using the same approach, but based on Spearman’s rho values, to further test the relationship between kinesiophobia and device-based physical activity. We conducted exploratory subgroup analyses to examine the differences in correlations between studies including participants with different health conditions and using different types of physical activity measures (i.e., device-based versus self-reported), physical activity measurement instruments (i.e., type of questionnaires, type of devices), physical activity outcomes, and kinesiophobia measures. In addition, we used meta-regressions to examine if the average age of participants or the proportion of women in a study predicted the reported correlation between kinesiophobia and physical activity. 
+Exploratory meta-regressions were conducted to examine if the average age of participants, the proportion of women, and pain in a study predicted the reported correlation between kinesiophobia and physical activity. Pain was normalized to a 0-100 scale to make the data comparable across pain scales. A sensitivity analysis was conducted to examine whether the quality of the studies affected the results.
 
 All analyses were performed in RStudio integrated development environment (IDE) (2023.06.1+524, “Mountain Hydrangea” release) for R software environment (R Core Team, 2023) using the ‘meta’ (Schwarzer, 2023), ‘metasens’ (Schwarzer et al., 2023), and ‘metafor’ (Vietchbauer, 2010, 2023) R packages.
 
@@ -121,7 +124,7 @@ summary(i2)
 plot(i2)
 ```
 
-The sampling error variance on level 1 is small (10.3%). The value of I2 Level 2, the amount of heterogeneity variance within clusters (i.e. within studies), is small (78.2%). The largest share, however, falls to level 3. Between-cluster (here: between-study) heterogeneity makes up I2 Level 3 = 81.5% of the total variation in our data. Overall, this indicates that there is considerable between-study heterogeneity, and less than one tenth of the variance can be explained by differences within studies.
+The sampling error variance on level 1 and the value of I2 on level 2, i.e., the amount of heterogeneity variance within studies, were small (10.3% and 8.2%, respectively). The largest share of heterogeneity variance was from level 3, with between-study heterogeneity making up 81.5% of the total variation in our data. Overall, this indicates that there is considerable between-study heterogeneity, and less than one tenth of the variance can be explained by differences within studies.
 
 
 ### Comparing models
@@ -147,7 +150,7 @@ Comparing full and reduced models.
 anova(m.cor, l3.removed)
 ```
 
-We see that the 3-level model, compared to the reduced one with 2 levels, shows a better fit. The Akaike (AIC) and Bayesian Information Criterion (BIC) are lower for the 3-level model, which indicates better performance and is consistent with the significant likelihood ratio test (LRT) comparing both models (χ2 = 12.67, p = 0.0004). Therefore, although the 3-level model introduces one additional parameter (i.e., it has 3 degrees of freedom instead of 2), this added complexity seems to be justified. Modeling of the nested data structure has improved our estimate of the pooled effect.
+The 3-level model showed a better fit than the 2-level model with lower Akaike’s information criterion (AIC) (28.4 vs. 39.0) and Bayesian information criterion (BIC) (35.6 vs. 43.8), indicating better performance. These lower AIC and BIC are consistent with the significant likelihood ratio test (LRT) comparing the two models (χ2 = 12.67, p = 0.0004). Therefore, although the 3-level model introduces an additional parameter, this added complexity has improved our estimate of the pooled effect.
 
 ## Primary analysis using metacor
 
@@ -166,8 +169,7 @@ m <- metacor(cor = cor,
 m
 ```
 
-Our meta-analysis of 63 studies, 83 correlation estimates, and 12,278 participants revealed a statistically significant small-to-moderate negative correlation between kinesiophobia and physical activity (r = -0.19; 95% confidence interval [95% CI]: -0.26 to -0.13; p < 0.0001). However, we observed substantial-to-considerable between-study statistical heterogeneity (between-study Tau2 = 0.06, 95% CI: 0.02 to 0.09; I2 = 85.5%, 95% CI: 82.6 to 87.9%), and the prediction interval ranged from r = -0.61 to 0.30, indicating that a moderate positive correlation cannot be ruled out for future studies.
-
+Our main meta-analysis of 63 studies, 83 Pearson’s r correlation estimates, and 12278 participants revealed a statistically significant small-to-moderate negative correlation between kinesiophobia and physical activity (r = -0.19; 95% confidence interval [95CI]: -0.26 to -0.13; p < 0.0001). However, we observed substantial-to-considerable between-study statistical heterogeneity (Tau2 = 0.06, 95CI: 0.02 to 0.09; I2 = 85.5%, 95CI: 82.6 to 87.9%), and the prediction interval ranged from r = -0.61 to 0.30, indicating that a moderate positive correlation cannot be ruled out for future studies.
 
 ## Primary meta-analysis forest plots
 
@@ -321,8 +323,7 @@ round(convert_z2r(-0.4017), 3) # lower CI
 round(convert_z2r(-0.0017), 3) # Upper CI
 ```
 
-
-Results of the secondary meta-analysis of 12 studies, 21 Spearman’s rho correlation estimates, and 2,084 participants was consistent with the main meta-analysis as it showed a statistically significant small-to-moderate negative correlation between kinesiophobia and physical activity (r = -0.20; 95% CI: -0.38 to -0.01; p = 0.049; Table 2; Figure 2). However, we observed substantial-to-considerable between-study statistical heterogeneity (Tau2 = 0.10, 95% CI: 0.04 to 0.28; I2 = 86.3%, 95% CI: 80.4 to 90.4%), and the prediction interval ranged from r = -0.71 to 0.45, indicating that a moderate positive correlation cannot be ruled out for future studies.
+Results of the secondary meta-analysis of 12 studies, 21 Spearman’s rho correlation estimates, and 2084 participants was consistent with the main meta-analysis as it showed a statistically significant small-to-moderate negative correlation between kinesiophobia and physical activity (r = -0.20; 95CI: -0.38 to -0.01; p = 0.049). However, we observed substantial-to-considerable between-study statistical heterogeneity (Tau2 = 0.10, 95CI: 0.04 to 0.28; I2 = 86.3%) and the prediction interval ranged from r = -0.71 to 0.45, indicating that a moderate positive correlation cannot be ruled out for future studies.
 
 ### Explore heterogeneity, rho
 
@@ -332,7 +333,7 @@ summary(i2_rho)
 plot(i2_rho)
 ```
 
-The value of I2 Level 2, the amount of heterogeneity variance within clusters (i.e. within studies), is very low, totaling roughly 1%. The largest share, however, falls to level 3. Between-cluster (here: between-study) heterogeneity makes up I2 Level 3 = 96.3% of the total variation in our data. Overall, this indicates that there is considerable between-study heterogeneity on the third level, and very little of the variance can be explained by differences within studies.
+The value of I2 Level 2, the amount of heterogeneity variance within clusters (i.e. within studies), is very low, totaling roughly 0%. The largest share, however, falls to level 3. Between-cluster (here: between-study) heterogeneity makes up I2 Level 3 = 96.8% of the total variation in our data. Overall, this indicates that there is considerable between-study heterogeneity on the third level, and very little of the variance can be explained by differences within studies.
 
 ### Compare models, rho
 
@@ -451,7 +452,7 @@ summary(Health_subg)
 
 The Test of Moderators revealed a significant difference between subgroups, F12,70 = 3.107, with p = 0.0014.
 
-Note that the model results are printed within a meta-regression framework. This means that we cannot directly extract the estimates in order to obtain the pooled effect sizes within subgroups. The first value, the intercept (intrcpt), shows the z value when the health status was acute pain (z = -0.129). The effect in the other groups can be obtained by adding their estimate to the one of the intercept. Thus, the effect in the arthritis group is z = -0.129 - 0.129 = -0.258, and the one in the Cancer group is z = -0.129 + 0.045 = -0.84. The same is true for the upper and lower confidence intervals.These are also Fisher z scores.
+Note that the model results are printed within a meta-regression framework. This means that we cannot directly extract the estimates in order to obtain the pooled effect sizes within subgroups. The first value, the intercept (intrcpt), shows the z value when the health status was acute pain (z = -0.129). The effect in the other groups can be obtained by adding their estimate to the one of the intercept. Thus, the effect in the arthritis group is z = -0.1290 - 0.1295 = -0.258, and the one in the Cancer group is z = -0.1290 + 0.0448 = -0.0838. The same is true for the upper and lower confidence intervals.These are also Fisher z scores.
 
 
 ```{r Health status meta, warning=FALSE}
@@ -459,7 +460,7 @@ Health_stat_meta <- update(m, subgroup = Health_status, tau.common = TRUE)
 Health_stat_meta
 ```
 
-The test of subgroup differences between health status measures was possible between studies comprising people with chronic (k = 35) or acute pain (k = 2), arthritis (k = 11), a cardiovascular condition (k = 10), a neurological condition (k = 8), surgery (k = 5), older adults (k = 3), obstructive sleep apnea (k = 2), a pulmonary condition (k = 2), or fibromyalgia (k = 2) (Table 2; Figure 5). We found statistical differences between these studies (p = 0.0014). The relationship between kinesiophobia and physical activity was statistically significant only in studies that included participants with cardiovascular condition (r = -0.30; 95% CI: -0.47 to -0.11), arthritis (r = -0.25; 95% CI: -0.39 to -0.10), a neurological condition (r = -0.53; 95% CI: -0.69 to -0.32), a pulmonary condition (r = -0.68; 95% CI: -0.82 to -0.46), or older adults (r = -0.40; 95% CI: -0.60 to -0.14). We found no evidence of an association between kinesiophobia and physical activity in studies that included participants with chronic pain (r = -0.07; 95% CI: -0.16 to 0.01) or acute pain (r = -0.13; 95% CI: -0.45 to 0.23). Statistical heterogeneity was higher in the studies comprising people with a pulmonary condition (I2 = 98.1%), arthritis (I2 = 93.4%), or older adults (I2 = 91.2%) than the studies comprising people with a cardiovascular (I2 = 28.7%) or neurological condition (I2 = 55.9%).
+The test of subgroup differences between health status was conducted on studies comprising people with chronic (k = 35) or acute pain (k = 2), arthritis (k = 11), a cardiovascular condition (k = 10), a neurological condition (k = 8), surgery (k = 5), older age (k = 3), obstructive sleep apnea (k = 2), a pulmonary condition (k = 2), fibromyalgia (k = 2), cancer (k = 1), as well as in post-partum women (k = 1) and healthy young adults (k = 1). We found a statistical moderating effect of health status (p = 0.0014). The relationship between kinesiophobia and physical activity was statistically significant only in studies that included participants with cardiac condition (r = -0.30; 95CI: -0.47 to -0.11), arthritis (r = -0.25; 95CI: -0.39 to -0.10), a neurologic condition (r = -0.53; 95CI: -0.69 to -0.32), a pulmonary condition (r = -0.68; 95CI: -0.82 to -0.46), or older adults (r = -0.40; 95CI: -0.60 to -0.14). We found no evidence of an association between kinesiophobia and physical activity in studies that included participants with chronic pain (r = -0.07; 95CI: -0.16 to 0.01) or acute pain (r = -0.13; 95CI: -0.45 to 0.23). Statistical heterogeneity was higher in the studies comprising people with a pulmonary condition (I2 = 98.1%), arthritis (I2 = 93.4%), or older adults (I2 = 91.2%) than in the studies comprising people with a cardiac (I2 = 28.7%) or neurologic condition (I2 = 55.9%).
 
 ```{r Forest plot for subgroup by Health condition using meta, fig.height=29, fig.width=12}
 forest(Health_stat_meta, 
@@ -514,7 +515,8 @@ The effect the objective measures group is z = -0.132, and in the self-report gr
 PAobj_meta <- update(m, subgroup = PA_objectivity, tau.common = TRUE)
 PAobj_meta
 ```
-The test of subgroup differences between self-reported (k = 54) and device-based (k = 29) measures of physical activity showed a statistically significant difference between these groups (p < 0.0001; Table 2). Both type of measures showed a negative correlation between kinesiophobia and physical activity, but self-reported measures showed a more negative correlation (r = -0.22; 95% CI: -0.29 to -0.14) than device-based measures (r = -0.13; 95% CI: -0.24 to -0.02; Supplemental Figure 6). However, we observed considerable between-study statistical heterogeneity (I2 = 85.5%). 
+
+The test of subgroup differences between self-reported (k = 54) and device-based (k = 29) measures of physical activity showed no evidence of a moderating effect of the type of physical activity measure (p = 0.171). Both self-reported measures (r = -0.22; 95CI: -0.29 to -0.14; I2 = 89.3%) and device-based measures (r = -0.13; 95CI: -0.24 to -0.02; I2 = 57.2%) showed a negative association between kinesiophobia and physical activity.
 
 ```{r PA measure objectivity subgroup forest plot, fig.height=21, fig.width=10}
 forest(PAobj_meta, 
@@ -568,7 +570,7 @@ PAm <- update(m,
 PAm
 ```
 
-The test of subgroup differences according to the instruments used to measure physical activity was possible between studies using accelerometers (k = 27), IPAQ (k = 25), BHPAQ (k = 4), SGPALS (k = 4), ad-hoc questionnaires (k = 4), pedometers (k = 3), GPAQ (k = 2), MLTPAQ (k = 2), GLTEQ (k = 2), LTPAI (k = 2), SQUASH (k = 2), and RAPAQ (k = 2). We found no evidence of a moderating effect of physical activity instruments (p = 0.209). 
+We also found no evidence of a moderating effect of physical activity instruments (p = 0.209), physical activity outcome (p = 0.685), or kinesiophobia instrument (p = 0.452).
 
 ```{r Forest plot for subgroup by PA measure, fig.height=30, fig.width=9}
 forest(PAm, 
@@ -624,8 +626,6 @@ PAout <- update(m,
 PAout
 ```
 
-The test of subgroup differences between physical activity outcomes was possible between studies using MET-min per week typically from the IPAQ (k = 34), a score from a questionnaire (k = 16), the number of steps per day (k = 13), active time per day or week (k = 12), the number of counts per minute (k = 5), and the number of kilocalories per day (k = 2) (Table 2; Figure 9). We found no evidence of a moderating effect of physical activity outcome (p = 0.685). 
-
 ```{r PA outcome subgroup forest plot, fig.height=25, fig.width=12}
 forest(PAout, 
             layout = "RevMan5", 
@@ -680,7 +680,6 @@ Kin_sub <- update(m,
        tau.common = TRUE)
 Kin_sub
 ```
-The test of subgroup differences between instruments used to assess kinesiophobia was possible only for TSK-17 (k = 44), FABQ (k = 15), TSK-11 (k = 8), TSK-Heart (k = 7), TSK-11 (k = 8), and TSK-13 (k = 3) (Table 2; Figure 10). We found no evidence of a moderating effect of the instrument used to assess kinesiophobia (p = 0.452).
 
 ```{r Forest plot for subgroup by kinesiophobia tool, fig.height=26, fig.width=10}
 forest(Kin_sub, 
@@ -720,7 +719,7 @@ m.cor.reg.age <- metareg(m, ~Age)
 m.cor.reg.age
 ```
 
-Age did not statistically influence the correlation values of the meta-analysis studies (k = 72; p = 0.349).
+Age did not statistically influence the correlation estimates of the meta-analysis studies (k = 72; p = 0.349).
 
 
 ```{r Bubble plot for meta-regression by age, fig.height=6, fig.width=8}
@@ -744,7 +743,7 @@ m.cor.reg.women <- metareg(m, ~Prop_women)
 m.cor.reg.women
 ```
 
-Similarly, the proportion of women (k = 72; p = 0.555) and the mean level of pain in the studies (k = 23; p = 0.481) did not influence correlation values. 
+Similarly, the proportion of women (k = 72; p = 0.555) and the mean level of pain in the studies (k = 49; p = 0.481) did not influence correlation estimates. 
 
 ```{r Bubble plot for meta-regression by proportion of women, fig.height=6, fig.width=8}
 bubble(m.cor.reg.women, 
@@ -862,7 +861,7 @@ test.egger = rma.mv(z,var.z, mod = ~ sqrt(var.z), random =  ~ 1 | author/cor_id,
 test.egger
 ```
 
-Egger’s regression test using the standard errors of the effect size estimates as a predictor in the meta-regression showed that the coefficient of the standard error was significant (b = -1.497, 95% CI: -2.618 to -0.3754, p = 0.0095), suggesting that the data in the funnel plot was asymmetrical (Figure 3). This asymmetry may be explained by publication bias, but also by other potential causes, such as different study procedures and between-study heterogeneity, which was substantial-to-considerable here. 
+Egger’s regression test using the standard errors of the effect size estimates as a predictor in the meta-regression showed that the coefficient of the standard error was significant (b = -1.497, 95% CI: -2.618 to -0.3754, p = 0.0095), suggesting that the data in the funnel plot was asymmetrical. This asymmetry may be explained by publication bias, but also by other potential causes, such as different study procedures and between-study heterogeneity, which was substantial-to-considerable here. 
 
 
 ## Pcurve analysis
@@ -871,11 +870,10 @@ Egger’s regression test using the standard errors of the effect size estimates
 pcurve(m, effect.estimation = FALSE, N, dmin = 0, dmax = 1)
 ```
 
-The 83 Pearson’s r correlation values were provided to the p-curve analysis. The observed p-curve included 35 statistically significant results (p < 0.05), 27 of which were highly significant (p < 0.025), and was visually right-skewed (Figure 3B). The other results were excluded because they had a p > 0.05. The p-value of the right-skewness test was < 0.001 for both the half curve (curve of p values ≤ 0.025) and the full curve (curve of p values < 0.05), confirming that the p-curve was right-skewed and suggesting that the effect of our meta-analysis is true, i.e., that the effect we estimated is not an artifact caused by selective reporting (e.g., p-hacking) in the literature 120. In addition, the statistical power of the studies that were included in the p-curve analysis was 97% (90% CI: 93 to 98%), suggesting that approximately 90% of the significant results are expected to be replicable.
+The 83 Pearson’s r correlation values were provided to the p-curve analysis. The observed p-curve included 35 statistically significant results (p < 0.05), 27 of which were highly significant (p < 0.025), and was visually right-skewed. The other results were excluded because they had a p > 0.05. The p-value of the right-skewness test was < 0.001 for both the half curve (curve of p values ≤ 0.025) and the full curve (curve of p values < 0.05), confirming that the p-curve was right-skewed and suggesting that the effect of our meta-analysis is true, i.e., that the effect we estimated is not an artifact caused by selective reporting (e.g., p-hacking) in the literature 120. In addition, the statistical power of the studies that were included in the p-curve analysis was 97% (90% CI: 93 to 98%), suggesting that approximately 90% of the significant results are expected to be replicable.
 
 
 # References
-
 - Cohen J. Statistical power analysis for the behavioral sciences. 2nd ed.; 1988.  
 - Egger M, Davey Smith G, Schneider M, Minder C. Bias in meta-analysis detected by a simple, graphical test. BMJ. 1997;315(7109):629-634. https://doi.org/10.1136/bmj.315.7109.62  
 - Higgins JPT, Thompson SG. Quantifying heterogeneity in a meta-analysis. Stat Med. 2002;21(11):1539-1558. https://doi.org/10.1002/sim.1186 
