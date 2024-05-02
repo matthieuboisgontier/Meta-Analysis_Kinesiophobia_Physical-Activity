@@ -300,7 +300,7 @@ dev.off()
 ## Read in rho data
 
 ```{r Import rho data}
-Kinphob_rho <- read.csv("meta_analysis_kinesiophobia_rho_update3.csv", 
+Kinphob_rho <- read.csv("2024-05-02_meta_analysis_kinesiophobia_rho.csv", 
                       header = TRUE, sep = ",")
 ```
 
