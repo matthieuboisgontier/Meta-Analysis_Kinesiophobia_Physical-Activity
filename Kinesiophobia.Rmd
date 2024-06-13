@@ -368,6 +368,7 @@ m.rho <- metacor(cor = rho,
               random = TRUE,
               method.tau = "REML",
               method.random.ci = "HK",
+              prediction = TRUE,
               title = "Secondary meta-analysis using metacor")
 
 m.rho
