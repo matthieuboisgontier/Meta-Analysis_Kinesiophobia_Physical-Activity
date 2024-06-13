@@ -1,7 +1,7 @@
 # Kinesiophobia and Physical Activity: A Systematic Review and Meta-Analysis
 
 ## Rmd script
-This repository contains an `Rmd` script "Kinesiophobia.Rmd" to conduct the meta-analysis examining the relationship between kinesiophobia and physical activity as well as subgroup meta-analyses and the meta-regressions. 
+This repository contains an `Rmd` script "Kinesiophobia.Rmd" to conduct the meta-analysis examining the relationship between kinesiophobia and physical activity as well as subgroup meta-analyses and the meta-regressions. Kinesiophobia_Physical_Activity.pdf is the pdf version of the .Rmd file.
 
 ## R scripts
 When Pearson’s correlation estimate (r) was not reported in an article, but the exact p-value and sample size (n) were available and it was possible to know the sign of the correlation based on the information provided in the article, the r value was computed using the 'Pearson r calculation.R' script.
