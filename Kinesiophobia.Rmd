@@ -164,6 +164,7 @@ m <- metacor(cor = cor,
               random = TRUE,
               method.tau = "REML",
               method.random.ci = "HK",
+              prediction = TRUE,
               title = "Primary meta-analysis using metacor")
 
 m
