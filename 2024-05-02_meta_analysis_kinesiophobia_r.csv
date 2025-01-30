@@ -1,4 +1,4 @@
-author,cluster,cor,z,var.z,n,Health_status,PA_objectivity,Kinesiophobia_measure,PA_measure,PA_outcome,Age,Prop_women,Pain,p-value,cor_id,quality
+author,cluster,cor,z,var.z,n,Health_status,PA_objectivity,FoM_measure,PA_measure,PA_outcome,Age,Prop_women,Pain,p-value,cor_id,quality
 "Alamam, 2019",sample_1,-0.17,-0.171666664,0.010309278,100,Chronic pain,Self-reported measure,FABQ,IPAQ,MET-min/week ,40,0.62,48,0.116,id_1,7
 "Alschuler, 2011",sample_2,-0.48,-0.522984278,0.058823529,20,Chronic pain,Device-based measure,TSK_17,Accelerometer,Counts/min,49.1,0.45,48.7,0.03,id_2,6
 "Altug, 2016",sample_3,-0.096,-0.096296554,0.009174312,112,Chronic pain,Self-reported measure,TSK_17,IPAQ,MET-min/week ,45,0.65,34.5,0.03,id_3,8
@@ -79,6 +79,6 @@ author,cluster,cor,z,var.z,n,Health_status,PA_objectivity,Kinesiophobia_measure,
 "Uritani, 2020",sample_59,-0.163,-0.164467041,0.006097561,167,Arthritis,Device-based measure,BFOMSO,Accelerometer,Steps/day,62.2,0.63,57,,id_78,7
 "Wang , 2023",sample_60,-0.35,-0.365443754,0.004545455,223,Pulmonary condition,Self-reported measure,BBQ,IPAQ,MET-min/week ,72.35,0.17,,<0.001,id_79,7
 "Wasiuk-Zowada, 2022",sample_61,-0.363,-0.380336888,0.012987013,80,Neurological condition,Self-reported measure,TSK_17,BHPAQ,Score,45.5,0.75,35,,id_80,7
-"Zadro, 2019",sample_62,-0.18,-0.181982689,0.01754386,60,Chronic pain,Self-reported measure,TSK_12,RAPAQ,Active time,68.3,0.52,50,,id_81,3.2
-"Zadro, 2019",sample_62,-0.12,-0.120581028,0.01754386,60,Chronic pain,Self-reported measure,TSK_13,RAPAQ,Active time,68.3,0.52,50,,id_82,3.2
+"Zadro, 2019",sample_62,-0.18,-0.181982689,0.01754386,60,Chronic pain,Self-reported measure,TSK_17,RAPAQ,Active time,68.3,0.52,50,,id_81,3.2
+"Zadro, 2019",sample_62,-0.12,-0.120581028,0.01754386,60,Chronic pain,Self-reported measure,TSK_17,RAPAQ,Active time,68.3,0.52,50,,id_82,3.2
 "Zelle, 2016",sample_63,-0.22,-0.223656109,0.002066116,487,Surgery,Self-reported measure,TSK_11,MLTPAQ,MET-min/week ,51.6,0.43,,,id_83,7
